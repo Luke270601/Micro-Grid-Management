@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro-Grid Management", "Micro-Grid Management\Micro-Grid Management.csproj", "{2627DF52-382E-4849-8483-55D01FFEF77C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActressMas", "..\..\Documents\Uni\Y4\TR1\MAS\Source Code and Examples\ActressMas Framework\ActressMas\ActressMas.csproj", "{512082B9-9B3A-43C8-9939-EFDFB1CAFF2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{2627DF52-382E-4849-8483-55D01FFEF77C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2627DF52-382E-4849-8483-55D01FFEF77C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2627DF52-382E-4849-8483-55D01FFEF77C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{512082B9-9B3A-43C8-9939-EFDFB1CAFF2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{512082B9-9B3A-43C8-9939-EFDFB1CAFF2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{512082B9-9B3A-43C8-9939-EFDFB1CAFF2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{512082B9-9B3A-43C8-9939-EFDFB1CAFF2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

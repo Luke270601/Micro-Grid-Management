@@ -5,8 +5,18 @@
     <projectFile profileName="Micro_Grid_Management">Micro-Grid Management/Micro-Grid Management.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Added license file and readme">
+    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Removed necessary class files">
+      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid/BatteryAgent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid/EnvironementAgent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid/GridManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid/HouseAgent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid/Settings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid/SolarPanelAgent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid/WindTurbineAgent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid Management.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid Management.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,16 +26,42 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Micro-Grid Management/ClientApp/package-lock.json" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Micro-Grid Management/Program.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProjectId" id="2L7EMYHhC9KBwVJUrUX5KrDJ2ta" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\lukes\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\lukes\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\lukes\\AppData\\Local\\Symbols\\src&quot;
+    ]
+  }
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Micro-Grid Management: IIS Express">
     <configuration name="Micro-Grid Management: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid Management.csproj" />
@@ -58,6 +94,7 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="Added license file and readme">
       <created>1675104719397</created>
@@ -66,8 +103,27 @@
       <option name="project" value="LOCAL" />
       <updated>1675104719397</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Added license file and readme" />
+      <created>1675213676108</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675213676108</updated>
+      <workItem from="1675213678732" duration="1214000" />
+      <workItem from="1675259337603" duration="1180000" />
+    </task>
+    <task id="LOCAL-00002" summary="Removed necessary class files">
+      <created>1675216378406</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675216378406</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
@@ -84,6 +140,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added license file and readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added license file and readme" />
+    <MESSAGE value="Removed redundant class files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed redundant class files" />
   </component>
 </project>
