@@ -6,17 +6,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Removed necessary class files">
-      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid/BatteryAgent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid/EnvironementAgent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid/GridManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid/HouseAgent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid/Settings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid/SolarPanelAgent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid/WindTurbineAgent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid Management.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid Management.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/AppRoutes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Counter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/FetchData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Layout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/NavMenu.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/NavMenu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/service-worker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/serviceWorkerRegistration.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +35,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Micro-Grid Management/ClientApp/package-lock.json" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Micro-Grid Management/Micro-Grid/EnvironementAgent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Micro-Grid Management/Program.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -46,22 +50,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\lukes\\RiderProjects\\Micro-Grid Management\\Micro-Grid Management\\ClientApp\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\lukes\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\lukes\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\lukes\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\lukes\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\lukes\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\lukes\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Micro-Grid Management: IIS Express">
     <configuration name="Micro-Grid Management: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid Management.csproj" />
@@ -111,6 +116,7 @@
       <updated>1675213676108</updated>
       <workItem from="1675213678732" duration="1214000" />
       <workItem from="1675259337603" duration="1180000" />
+      <workItem from="1675281280203" duration="1055000" />
     </task>
     <task id="LOCAL-00002" summary="Removed necessary class files">
       <created>1675216378406</created>
