@@ -16,6 +16,7 @@ namespace Micro_Grid_Management.Micro_Grid
         {
             try
             {
+                Settings.Packet packet = new Settings.Packet();
                 message.Parse(out string action, out string parameters);
 
                 switch (action)
@@ -24,6 +25,8 @@ namespace Micro_Grid_Management.Micro_Grid
                         supplyDemand = Convert.ToDouble(parameters);
                         supply += supplyDemand;
                         Console.WriteLine("Currently Stored: " + supply);
+                        packet = new Settings.Packet("Battery", "Stored: " + supply);
+                        Settings.Packets.Add(packet);
                         Send("GridManager", "energy_stored");
                         break;
                     

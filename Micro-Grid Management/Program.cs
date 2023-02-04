@@ -1,3 +1,4 @@
+using System.Text.Json;
 using ActressMas;
 using Micro_Grid_Management.Micro_Grid;
 
@@ -26,9 +27,10 @@ app.MapControllerRoute(
     pattern: "{controller}/{action=Index}/{id?}");
 
 app.MapFallbackToFile("index.html");
+RunSim();
+var json = JsonSerializer.Serialize(Settings.Packets);
 
 app.Run();
-RunSim();
 
 void RunSim()
 {

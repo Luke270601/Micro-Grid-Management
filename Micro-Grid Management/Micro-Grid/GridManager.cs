@@ -10,6 +10,8 @@ namespace Micro_Grid_Management.Micro_Grid
         private double _supply = 0;
         private double _demand = 0;
         private bool _finished = false;
+        
+        
 
         public override void Setup()
         {
@@ -17,6 +19,7 @@ namespace Micro_Grid_Management.Micro_Grid
 
         public override void Act(Message message)
         {
+            Settings.Packet packet = new Settings.Packet();
             try
             {
                 message.Parse(out var action, out string parameters);
@@ -26,12 +29,16 @@ namespace Micro_Grid_Management.Micro_Grid
                     {
                         case "demand":
                             Console.WriteLine(message.Sender + " : " + parameters);
+                            packet = new Settings.Packet(message.Sender, parameters);
+                            Settings.Packets.Add(packet);
                             _demand += Convert.ToDouble(parameters);
                             _houseAgentCount--;
                             break;
 
                         case "supply":
                             Console.WriteLine(message.Sender + " : " + parameters);
+                            packet = new Settings.Packet(message.Sender, parameters);
+                            Settings.Packets.Add(packet);
                             if (message.Sender.Contains("solarPanel"))
                             {
                                 _solarPanelCount--;
@@ -48,12 +55,16 @@ namespace Micro_Grid_Management.Micro_Grid
 
                         case "energy_stored":
                             Console.WriteLine(message.Sender + " : " + "Energy has been stored");
+                            packet = new Settings.Packet(message.Sender, parameters);
+                            Settings.Packets.Add(packet);
                             Broadcast("generate");
                             Settings.HoursRunning++;
                             break;
 
                         case "demand_met":
                             Console.WriteLine(message.Sender + " : " + "Battery provided power");
+                            packet = new Settings.Packet(message.Sender, parameters);
+                            Settings.Packets.Add(packet);
                             Broadcast("generate");
                             Settings.HoursRunning++;
                             break;
@@ -62,13 +73,14 @@ namespace Micro_Grid_Management.Micro_Grid
                             _demand = Convert.ToDouble(parameters);
                             Console.WriteLine(message.Sender + " : " + Convert.ToDouble(parameters) +
                                               " demand remaining");
+                            packet = new Settings.Packet(message.Sender, parameters);
+                            Settings.Packets.Add(packet);
                             SupplyFromGrid(_demand);
                             Broadcast("generate");
                             Settings.HoursRunning++;
                             break;
 
                         case "stop":
-                            Console.Write("Stopping Panel");
                             Stop();
                             break;
                     }
@@ -105,6 +117,7 @@ namespace Micro_Grid_Management.Micro_Grid
                 Console.WriteLine("Total From Grid: " + Settings.EnergyFromGrid + " kw/h");
                 Send("BatteryStorage", "stop");
                 Send("Environment", "stop");
+                Console.Write(Settings.Packets[0].Message);
                 Stop();
             }
         }
