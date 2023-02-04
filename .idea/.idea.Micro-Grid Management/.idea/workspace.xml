@@ -5,10 +5,9 @@
     <projectFile profileName="Micro_Grid_Management">Micro-Grid Management/Micro-Grid Management.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Added printed messages to list">
+    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Included Grid actions into list of messages and prevented the total taken from grid being printed twice">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid/GridManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid/GridManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid/Settings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid/Settings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +43,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Micro-Grid Management/ClientApp/package-lock.json" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/lukes/RiderProjects/Micro-Grid Management/Micro-Grid Management/Micro-Grid/BatteryAgent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Micro-Grid Management/Micro-Grid/EnvironementAgent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/lukes/RiderProjects/Micro-Grid Management/Micro-Grid Management/Micro-Grid/GridManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Micro-Grid Management/Program.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -132,6 +131,7 @@
       <workItem from="1675437963987" duration="3930000" />
       <workItem from="1675464711590" duration="325000" />
       <workItem from="1675524215701" duration="3537000" />
+      <workItem from="1675529210903" duration="1367000" />
     </task>
     <task id="LOCAL-00002" summary="Removed necessary class files">
       <created>1675216378406</created>
@@ -161,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675526220746</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Included Grid actions into list of messages and prevented the total taken from grid being printed twice">
+      <created>1675529358121</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1675529358121</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,25 +193,7 @@
     <MESSAGE value="Removed necessary class files" />
     <MESSAGE value="Removed further unnecessary files and setup a navbar with distinct pages" />
     <MESSAGE value="Added printed messages from microgrid sim to list" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added printed messages from microgrid sim to list" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Micro-Grid Management/Micro-Grid/GridManager.cs</url>
-          <line>126</line>
-          <properties documentPath="C:\Users\lukes\RiderProjects\Micro-Grid Management\Micro-Grid Management\Micro-Grid\GridManager.cs" initialLine="119" containingFunctionPresentation="method 'ActDefault'">
-            <startOffsets>
-              <option value="5030" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5073" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Included Grid actions into list of messages and prevented the total taken from grid being printed twice" />
+    <option name="LAST_COMMIT_MESSAGE" value="Included Grid actions into list of messages and prevented the total taken from grid being printed twice" />
   </component>
 </project>

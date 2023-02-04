@@ -28,11 +28,10 @@ app.MapControllerRoute(
 
 app.MapFallbackToFile("index.html");
 RunSim();
-var json = JsonSerializer.Serialize(Settings.Packets);
 
 app.Run();
 
-void RunSim()
+JsonContent RunSim()
 {
     // inefficient, uses broadcast to simulate public open-cry auction
 
@@ -69,4 +68,7 @@ void RunSim()
             env.Add(turbineAgent, $"turbine{i:D2}");
         }
         env.Start();
+        var json = JsonSerializer.Serialize(Settings.Packets);
+        JsonContent jsonContent = JsonContent.Create(json);
+        return jsonContent;
 }
