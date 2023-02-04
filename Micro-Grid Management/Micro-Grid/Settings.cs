@@ -5,7 +5,7 @@ namespace Micro_Grid_Management.Micro_Grid
 {
     public class Settings
     {
-        public static int PanelCount = 12;
+        public static int PanelCount = 1;
         public static int TurbineCount = 3;
         public static int HouseCount = 10;
         public static double EnergyFromGrid = 0;
