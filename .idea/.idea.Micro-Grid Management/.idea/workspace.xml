@@ -5,8 +5,17 @@
     <projectFile profileName="Micro_Grid_Management">Micro-Grid Management/Micro-Grid Management.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Included Grid actions into list of messages and prevented the total taken from grid being printed twice">
+    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Convert run Sim method to Json content to later allow for passage with JS">
+      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Home.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/Controllers/SimulationController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/About.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/setupProxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/setupProxy.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Micro-Grid Management/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +53,6 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Micro-Grid Management/ClientApp/package-lock.json" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Micro-Grid Management/Micro-Grid/EnvironementAgent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/lukes/RiderProjects/Micro-Grid Management/Micro-Grid Management/Micro-Grid/GridManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Micro-Grid Management/Program.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -65,6 +73,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\lukes\\RiderProjects\\Micro-Grid Management\\Micro-Grid Management\\ClientApp\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -76,7 +85,10 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Micro-Grid Management: IIS Express">
+  <component name="RunManager" selected=".NET Launch Settings Profile.Micro-Grid Management: Micro_Grid_Management">
+    <configuration name="All in generated-requests" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http">
+      <method v="2" />
+    </configuration>
     <configuration name="Micro-Grid Management: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid Management.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
@@ -107,6 +119,11 @@
         <option name="Build" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.All in generated-requests" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -131,7 +148,10 @@
       <workItem from="1675437963987" duration="3930000" />
       <workItem from="1675464711590" duration="325000" />
       <workItem from="1675524215701" duration="3537000" />
-      <workItem from="1675529210903" duration="1367000" />
+      <workItem from="1675529210903" duration="1526000" />
+      <workItem from="1675699194773" duration="8206000" />
+      <workItem from="1675728068524" duration="2267000" />
+      <workItem from="1675779272283" duration="725000" />
     </task>
     <task id="LOCAL-00002" summary="Removed necessary class files">
       <created>1675216378406</created>
@@ -168,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675529358121</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Convert run Sim method to Json content to later allow for passage with JS">
+      <created>1675531128269</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1675531128269</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,6 +221,11 @@
     <MESSAGE value="Removed further unnecessary files and setup a navbar with distinct pages" />
     <MESSAGE value="Added printed messages from microgrid sim to list" />
     <MESSAGE value="Included Grid actions into list of messages and prevented the total taken from grid being printed twice" />
-    <option name="LAST_COMMIT_MESSAGE" value="Included Grid actions into list of messages and prevented the total taken from grid being printed twice" />
+    <MESSAGE value="Convert run Sim method to Json content to later allow for passage with JS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Convert run Sim method to Json content to later allow for passage with JS" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

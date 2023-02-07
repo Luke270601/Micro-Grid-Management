@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './custom.css';
+import './css/custom.css';
 import {Routes, Route} from "react-router-dom";
 import {Home} from "./pages/Home"
 import {About} from "./pages/About"
