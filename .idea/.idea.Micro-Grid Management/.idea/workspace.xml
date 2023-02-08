@@ -5,28 +5,88 @@
     <projectFile profileName="Micro_Grid_Management">Micro-Grid Management/Micro-Grid Management.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Added license file and readme">
+    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Start of data retrieval from backend to client side">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Home.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
+    </option>
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="37ff3949-9611-4d78-bc6b-80ee2a78dec0" />
+        <option name="url" value="https://github.com/Luke270601/Micro-Grid-Management" />
+      </UrlAndAccount>
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Micro-Grid Management/ClientApp/package-lock.json" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Micro-Grid Management/Micro-Grid/EnvironementAgent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Micro-Grid Management/Program.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProjectId" id="2L7EMYHhC9KBwVJUrUX5KrDJ2ta" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Micro-Grid Management: IIS Express">
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\lukes\\RiderProjects\\Micro-Grid Management\\Micro-Grid Management\\ClientApp\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\lukes\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\lukes\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\lukes\\AppData\\Local\\Symbols\\src&quot;
+    ]
+  }
+}</component>
+  <component name="RunManager" selected=".NET Launch Settings Profile.Micro-Grid Management: Micro_Grid_Management">
+    <configuration name="All in generated-requests" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="Micro-Grid Management: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid Management.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
@@ -57,7 +117,15 @@
         <option name="Build" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.generated-requests | #1" />
+        <item itemvalue="HTTP Request.generated-requests | #2" />
+        <item itemvalue="HTTP Request.All in generated-requests" />
+      </list>
+    </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="Added license file and readme">
       <created>1675104719397</created>
@@ -66,8 +134,76 @@
       <option name="project" value="LOCAL" />
       <updated>1675104719397</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Added license file and readme" />
+      <created>1675213676108</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675213676108</updated>
+      <workItem from="1675213678732" duration="1214000" />
+      <workItem from="1675259337603" duration="1180000" />
+      <workItem from="1675281280203" duration="4019000" />
+      <workItem from="1675350127215" duration="2377000" />
+      <workItem from="1675353300287" duration="9164000" />
+      <workItem from="1675437963987" duration="3930000" />
+      <workItem from="1675464711590" duration="325000" />
+      <workItem from="1675524215701" duration="3537000" />
+      <workItem from="1675529210903" duration="1526000" />
+      <workItem from="1675699194773" duration="8206000" />
+      <workItem from="1675728068524" duration="2267000" />
+      <workItem from="1675779272283" duration="725000" />
+      <workItem from="1675792296409" duration="1249000" />
+      <workItem from="1675793735671" duration="5133000" />
+      <workItem from="1675803316798" duration="127000" />
+      <workItem from="1675807817888" duration="1238000" />
+    </task>
+    <task id="LOCAL-00002" summary="Removed necessary class files">
+      <created>1675216378406</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675216378406</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Removed necessary class files">
+      <created>1675287310221</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675287310221</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Removed further unnecessary files and setup a navbar with distinct pages">
+      <created>1675365834986</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675365834986</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added printed messages to list">
+      <created>1675526220746</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675526220746</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Included Grid actions into list of messages and prevented the total taken from grid being printed twice">
+      <created>1675529358121</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1675529358121</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Convert run Sim method to Json content to later allow for passage with JS">
+      <created>1675531128269</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1675531128269</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
@@ -84,6 +220,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added license file and readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added license file and readme" />
+    <MESSAGE value="Removed redundant class files" />
+    <MESSAGE value="Removed necessary class files" />
+    <MESSAGE value="Removed further unnecessary files and setup a navbar with distinct pages" />
+    <MESSAGE value="Added printed messages from microgrid sim to list" />
+    <MESSAGE value="Included Grid actions into list of messages and prevented the total taken from grid being printed twice" />
+    <MESSAGE value="Convert run Sim method to Json content to later allow for passage with JS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Convert run Sim method to Json content to later allow for passage with JS" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
