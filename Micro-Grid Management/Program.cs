@@ -1,6 +1,4 @@
 using System.Text.Json;
-using ActressMas;
-using Micro_Grid_Management.Micro_Grid;
 
 var builder = WebApplication.CreateBuilder(args);
 
