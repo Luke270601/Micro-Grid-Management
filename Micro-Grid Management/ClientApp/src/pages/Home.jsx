@@ -3,13 +3,12 @@
 
 export function Home() {
     function getSimData() {
-        let req = new XMLHttpRequest();
-        req.open("GET", "/Simulation")
-        req.send()
-        
-        req.response = function (response){
-            console.log(response)
-        }
+        $.getJSON( "https://localhost:44314/api/Simulation", function(data) {
+           
+        })
+            .done(function() {
+                console.log( data );
+            })
     }
 
     return (

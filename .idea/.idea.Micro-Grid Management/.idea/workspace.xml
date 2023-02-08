@@ -5,18 +5,9 @@
     <projectFile profileName="Micro_Grid_Management">Micro-Grid Management/Micro-Grid Management.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Convert run Sim method to Json content to later allow for passage with JS">
-      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Home.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/Controllers/SimulationController.cs" afterDir="false" />
+    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Start of data retrieval from backend to client side">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/NavBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/About.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Home.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/setupProxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/setupProxy.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Home.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +27,7 @@
         <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -89,6 +81,12 @@
     <configuration name="All in generated-requests" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http">
       <method v="2" />
     </configuration>
+    <configuration name="generated-requests | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="Micro-Grid Management: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid Management.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
@@ -121,6 +119,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.generated-requests | #1" />
+        <item itemvalue="HTTP Request.generated-requests | #2" />
         <item itemvalue="HTTP Request.All in generated-requests" />
       </list>
     </recent_temporary>
@@ -152,6 +152,10 @@
       <workItem from="1675699194773" duration="8206000" />
       <workItem from="1675728068524" duration="2267000" />
       <workItem from="1675779272283" duration="725000" />
+      <workItem from="1675792296409" duration="1249000" />
+      <workItem from="1675793735671" duration="5133000" />
+      <workItem from="1675803316798" duration="127000" />
+      <workItem from="1675807817888" duration="1238000" />
     </task>
     <task id="LOCAL-00002" summary="Removed necessary class files">
       <created>1675216378406</created>
