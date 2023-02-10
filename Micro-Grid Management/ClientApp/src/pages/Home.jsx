@@ -14,8 +14,12 @@ export function Home() {
 
             })
                 .done(function (data) {
+                    alert("Data collected")
                     console.log(data);
                 })
+                .fail(function (){
+                   alert("Web api not currently active, please try again later.") 
+                });
         }
         
         else {

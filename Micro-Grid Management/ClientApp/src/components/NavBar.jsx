@@ -3,7 +3,7 @@
 export function NavBar(){
 return(
     <nav className="navbar navbar-dark navbar-expand bg-dark">
-        <Link to={"/"} className="navbar-brand px-3">Navbar</Link>
+        <Link to={"/"} className="navbar-brand px-3">Micro-Grid Manager</Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>

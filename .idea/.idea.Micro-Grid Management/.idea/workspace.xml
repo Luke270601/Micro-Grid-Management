@@ -5,10 +5,9 @@
     <projectFile profileName="Micro_Grid_Management">Micro-Grid Management/Micro-Grid Management.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Start of data retrieval from backend to client side">
+    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Created form to input parameters for the simulation">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/NavBar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,6 +155,9 @@
       <workItem from="1675793735671" duration="5133000" />
       <workItem from="1675803316798" duration="127000" />
       <workItem from="1675807817888" duration="1238000" />
+      <workItem from="1675940286207" duration="780000" />
+      <workItem from="1675947771970" duration="7000" />
+      <workItem from="1676031655789" duration="614000" />
     </task>
     <task id="LOCAL-00002" summary="Removed necessary class files">
       <created>1675216378406</created>
@@ -199,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675531128269</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Created form to input parameters for the simulation">
+      <created>1675886975897</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1675886975897</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,7 +235,8 @@
     <MESSAGE value="Added printed messages from microgrid sim to list" />
     <MESSAGE value="Included Grid actions into list of messages and prevented the total taken from grid being printed twice" />
     <MESSAGE value="Convert run Sim method to Json content to later allow for passage with JS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Convert run Sim method to Json content to later allow for passage with JS" />
+    <MESSAGE value="Created form to input parameters for the simulation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created form to input parameters for the simulation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
