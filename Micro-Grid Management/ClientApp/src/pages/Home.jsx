@@ -1,4 +1,5 @@
 ﻿import $ from 'jquery';
+import {SideBar} from "../components/NavBar";
 
 
 export function Home() {
@@ -29,8 +30,7 @@ export function Home() {
 
     return (
         <>
-            <body>
-
+            <SideBar/>
             <h5>Simulation Options</h5>
 
             <form>
@@ -61,8 +61,6 @@ export function Home() {
                     <button type="button" className="btn btn-primary " onClick={getSimData}>Button</button>
                 </div>
             </form>
-
-            </body>
         </>
 
     );

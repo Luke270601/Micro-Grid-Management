@@ -5,9 +5,11 @@
     <projectFile profileName="Micro_Grid_Management">Micro-Grid Management/Micro-Grid Management.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Created form to input parameters for the simulation">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Message to show api call was successful or not">
+      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Visualiser.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Home.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/micro-grid_sim_integration" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RESET_MODE" value="HARD" />
@@ -157,7 +159,7 @@
       <workItem from="1675807817888" duration="1238000" />
       <workItem from="1675940286207" duration="780000" />
       <workItem from="1675947771970" duration="7000" />
-      <workItem from="1676031655789" duration="614000" />
+      <workItem from="1676031655789" duration="2035000" />
     </task>
     <task id="LOCAL-00002" summary="Removed necessary class files">
       <created>1675216378406</created>
@@ -208,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675886975897</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Message to show api call was successful or not">
+      <created>1676039763996</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1676039763996</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +245,8 @@
     <MESSAGE value="Included Grid actions into list of messages and prevented the total taken from grid being printed twice" />
     <MESSAGE value="Convert run Sim method to Json content to later allow for passage with JS" />
     <MESSAGE value="Created form to input parameters for the simulation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created form to input parameters for the simulation" />
+    <MESSAGE value="Message to show api call was successful or not" />
+    <option name="LAST_COMMIT_MESSAGE" value="Message to show api call was successful or not" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
