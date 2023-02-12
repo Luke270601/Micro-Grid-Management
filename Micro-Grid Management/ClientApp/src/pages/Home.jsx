@@ -1,5 +1,5 @@
 ﻿import $ from 'jquery';
-import {SideBar} from "../components/NavBar";
+import {TabPanel} from "../components/SideBar";
 
 
 export function Home() {
@@ -29,12 +29,10 @@ export function Home() {
     }
 
     return (
-        <>
-            <SideBar/>
+        <div id={"Home"}>
             <h5>Simulation Options</h5>
-
             <form>
-                <div className="form-group">
+                <div>
                     <label className={"form-label"}>Number of Turbines:</label>
                     <input type="number" className="form-control-sm px-4" id="turbine-count"/><br></br>
                     <label className={"form-label"}>Number of Solar Panels:</label>
@@ -61,7 +59,7 @@ export function Home() {
                     <button type="button" className="btn btn-primary " onClick={getSimData}>Button</button>
                 </div>
             </form>
-        </>
+        </div>
 
     );
 }
