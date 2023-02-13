@@ -2,18 +2,16 @@
 import {Link} from "react-router-dom";
 
 export function TabPanel() {
+
     return (
         <div className="side-bar">
-            <a className="navbar-brand" href="#">
-                <img src="L" width="30" height="30"
-                     className="d-inline-block align-top" alt=""/>
-                Dashboard
-            </a>
             <ul className="navbar-nav" id="navbarNavAltMarkup">
+                <br/>
                 <li className="nav-item active">
-                    <Link to={"/simulate"}  className="nav-link btn">Simulate</Link>
+                    <Link to={"/"}  className="nav-link btn">Simulate</Link>
                 </li>
-                <li className="nav-item">
+                <br/>
+                <li className="nav-item active">
                     <Link to={"/history"} className="nav-link btn">History</Link>
                 </li>
             </ul>

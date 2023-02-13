@@ -5,15 +5,16 @@
     <projectFile profileName="Micro_Grid_Management">Micro-Grid Management/Micro-Grid Management.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Added Sidebar component">
-      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/SideBar.jsx" afterDir="false" />
+    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Created base for sidebar">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/public/Lightning Bolt.ico" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/public/Lightning Bolt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/Lightning Bolt.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/SideBar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/css/custom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Simulate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Simulate.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +83,13 @@
     ]
   }
 }</component>
+  <component name="RunDashboard">
+    <option name="excludedTypes">
+      <set>
+        <option value="HttpClient.HttpRequestRunConfigurationType" />
+      </set>
+    </option>
+  </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Micro-Grid Management: IIS Express">
     <configuration name="All in generated-requests" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http">
       <method v="2" />
@@ -122,6 +130,13 @@
         <option name="Build" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue=".NET Launch Settings Profile.Micro-Grid Management: IIS Express" />
+      <item itemvalue=".NET Launch Settings Profile.Micro-Grid Management: Micro_Grid_Management" />
+      <item itemvalue="HTTP Request.All in generated-requests" />
+      <item itemvalue="HTTP Request.generated-requests | #1" />
+      <item itemvalue="HTTP Request.generated-requests | #2" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="HTTP Request.generated-requests | #1" />
@@ -222,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676039763996</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Created base for sidebar">
+      <created>1676318550748</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1676318550748</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,7 +273,8 @@
     <MESSAGE value="Convert run Sim method to Json content to later allow for passage with JS" />
     <MESSAGE value="Created form to input parameters for the simulation" />
     <MESSAGE value="Message to show api call was successful or not" />
-    <option name="LAST_COMMIT_MESSAGE" value="Message to show api call was successful or not" />
+    <MESSAGE value="Created base for sidebar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created base for sidebar" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
