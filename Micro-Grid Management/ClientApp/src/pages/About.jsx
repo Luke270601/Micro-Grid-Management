@@ -3,7 +3,7 @@
 export function About(){
     return(
         <>
-            <TabPanel></TabPanel>
+            
         </>
     );
 }

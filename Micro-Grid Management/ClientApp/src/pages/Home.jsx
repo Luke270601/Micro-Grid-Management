@@ -30,6 +30,7 @@ export function Home() {
 
     return (
         <div id={"Home"}>
+            <TabPanel></TabPanel>
             <h5>Simulation Options</h5>
             <form>
                 <div>
