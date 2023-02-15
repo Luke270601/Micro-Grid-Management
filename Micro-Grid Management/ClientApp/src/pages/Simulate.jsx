@@ -1,6 +1,7 @@
 import {TabPanel} from "../components/SideBar";
 import $ from "jquery";
 import React from "react";
+import {Visualiser} from "../components/Visualiser";
 
 export function Simulate() {
     function getSimData() {
@@ -10,8 +11,7 @@ export function Simulate() {
         let houseCount = document.getElementById("houses").value
 
         if (duration < 2 && turbineCount != null && panelCount != null && houseCount > 0) {
-            $.getJSON("https://localhost:44314/api/Simulation?duration=" + duration + "&turbineCount=" + turbineCount +
-                "&panelCount=" + panelCount + "&houseCount=" + houseCount, function () {
+            $.getJSON("https://localhost:44314/api/Simulation?duration=" + duration + "&turbineCount=" + turbineCount + "&panelCount=" + panelCount + "&houseCount=" + houseCount, function () {
 
             })
                 .done(function (data) {
@@ -26,62 +26,60 @@ export function Simulate() {
         }
     }
 
-    return (
-        <div id={"simulate"}>
+    return (<div id={"simulate"}>
             <div className="row">
-                <div className={"col-2"}>
-                    <TabPanel></TabPanel>
-                </div>
-                <div className={"col-4"}>
+                <TabPanel></TabPanel>
+                <div  className={"col-3"}>
                     <br/>
-                    <div className="card ">
-                            <h3 className="card-header text-lg-start">Settings</h3>
-                            <div className="card-body">
-                                <form>
-                                    <div className="form-group">
-                                        <label htmlFor="turbines">Number of Turbines</label>
-                                        <input type="number" className="form-control" id="turbines"
-                                               placeholder="Enter the number of turbines"/>
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="panels">Number of Panels</label>
-                                        <input type="number" className="form-control" id="panels"
-                                               placeholder="Enter the number of panels"/>
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="houses">Number of Houses</label>
-                                        <input type="number" className="form-control" id="houses"
-                                               placeholder="Enter the number of houses"/>
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="duration">Duration</label>
-                                        <input type="number" className="form-control" id="duration"
-                                               placeholder="Enter the duration"/>
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="month">Month of the Year</label>
-                                        <select className="form-control" id="month">
-                                            <option>January</option>
-                                            <option>February</option>
-                                            <option>March</option>
-                                            <option>April</option>
-                                            <option>May</option>
-                                            <option>June</option>
-                                            <option>July</option>
-                                            <option>August</option>
-                                            <option>September</option>
-                                            <option>October</option>
-                                            <option>November</option>
-                                            <option>December</option>
-                                        </select>
-                                    </div>
-                                    <button type="button" className="btn btn-primary" onClick={getSimData}>Submit</button>
-                                </form>
-                            </div>
+                    <div className="settings-card card">
+                        <h3 className="card-header text-lg-start">Settings</h3>
+                        <div className="card-body">
+                            <form>
+                                <div className="form-group">
+                                    <label htmlFor="turbines">Number of Turbines</label>
+                                    <input type="number" className="form-control" id="turbines"
+                                           placeholder="Enter the number of turbines"/>
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="panels">Number of Panels</label>
+                                    <input type="number" className="form-control" id="panels"
+                                           placeholder="Enter the number of panels"/>
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="houses">Number of Houses</label>
+                                    <input type="number" className="form-control" id="houses"
+                                           placeholder="Enter the number of houses"/>
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="duration">Duration</label>
+                                    <input type="number" className="form-control" id="duration"
+                                           placeholder="Enter the duration"/>
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="month">Month of the Year</label>
+                                    <select className="form-control" id="month">
+                                        <option>January</option>
+                                        <option>February</option>
+                                        <option>March</option>
+                                        <option>April</option>
+                                        <option>May</option>
+                                        <option>June</option>
+                                        <option>July</option>
+                                        <option>August</option>
+                                        <option>September</option>
+                                        <option>October</option>
+                                        <option>November</option>
+                                        <option>December</option>
+                                    </select>
+                                </div>
+                                <button type="button" className="btn btn-primary" onClick={getSimData}>Submit</button>
+                            </form>
                         </div>
+                    </div>
+                </div>
+                <div className={"col-7"}>
+                    <Visualiser></Visualiser>
                 </div>
             </div>
-        </div>
-    )
-        ;
+        </div>);
 }

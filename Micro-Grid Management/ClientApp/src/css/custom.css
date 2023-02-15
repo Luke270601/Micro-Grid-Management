@@ -21,6 +21,41 @@ li{
 background-color: #585664;
 }
 
+.settings-card {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fade-in-upwards 0.5s ease-out forwards;
+}
+
+.visualiser-card {
+  opacity: 0;
+  transform: translateX(50px);
+  animation: fade-in-from-right 0.5s ease-out forwards;
+}
+
+
+@keyframes fade-in-upwards {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-from-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .card-header{
   color: white;
   background-color: #3F4856;
@@ -30,3 +65,43 @@ label{
   color: white;
 }
 
+.settings{
+  padding-left: 122px;
+}
+
+.progress-bar {
+  -webkit-transition: width 0.5s ease-in-out;
+  -moz-transition: width 0.5s ease-in-out;
+  -o-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
+}
+
+.battery-container {
+  width: 100px;
+  height: 200px;
+  border: 2px solid #000;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.battery-level {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background-color: #39b54a;
+  transition: height 0.3s ease-in-out;
+}
+
+.battery-status {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+}
