@@ -26,11 +26,10 @@ export function Simulate() {
         }
     }
 
-    return (<div id={"simulate"}>
-            <div className="row">
-                <TabPanel></TabPanel>
-                <div  className={"col-3"}>
-                    <br/>
+    return (
+        <div id={"simulate"}>
+            <TabPanel/>
+                <div className={"settings-container"}>
                     <div className="settings-card card">
                         <h3 className="card-header text-lg-start">Settings</h3>
                         <div className="card-body">
@@ -76,10 +75,8 @@ export function Simulate() {
                             </form>
                         </div>
                     </div>
-                </div>
-                <div className={"col-7"}>
                     <Visualiser></Visualiser>
                 </div>
-            </div>
-        </div>);
+        </div>
+    );
 }
