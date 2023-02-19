@@ -5,12 +5,12 @@
     <projectFile profileName="Micro_Grid_Management">Micro-Grid Management/Micro-Grid Management.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Added transitions to settings and visualiser">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/package.json" afterDir="false" />
+    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Setup minor formatting for settings and visualiser position">
+      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/turbine-blades.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/turbine-pillar.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Visualiser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Visualiser.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Simulate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Simulate.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid Management.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/Micro-Grid Management.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +180,7 @@
       <workItem from="1676388231842" duration="6916000" />
       <workItem from="1676458939248" duration="1286000" />
       <workItem from="1676491032215" duration="3634000" />
-      <workItem from="1676716750914" duration="5717000" />
+      <workItem from="1676716750914" duration="12885000" />
     </task>
     <task id="LOCAL-00002" summary="Removed necessary class files">
       <created>1675216378406</created>
@@ -266,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676495256280</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Setup minor formatting for settings and visualiser position">
+      <created>1676744579934</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1676744579934</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,7 +306,8 @@
     <MESSAGE value="Got side bar working correctly" />
     <MESSAGE value="fixed formatting on settings tab" />
     <MESSAGE value="Added transitions to settings and visualiser" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added transitions to settings and visualiser" />
+    <MESSAGE value="Setup minor formatting for settings and visualiser position" />
+    <option name="LAST_COMMIT_MESSAGE" value="Setup minor formatting for settings and visualiser position" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

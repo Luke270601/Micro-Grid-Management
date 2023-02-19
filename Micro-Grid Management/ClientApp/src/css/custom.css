@@ -12,6 +12,10 @@
     gap: 5%;
 }
 
+.grid-item{
+    justify-content: center;
+}
+
 #simulate {
     display: flex;
     justify-content: flex-start;
@@ -48,13 +52,22 @@ li {
 .visualiser-card {
     opacity: 0;
     width: 1100px;
-    height: 700px;
+    height: 865px;
     transform: translateX(50px);
     animation: fade-in-from-right 0.5s ease-out forwards;
 }
 
 .visualiser-container{
     display: grid;
+    grid-template-columns: 348px 348px 348px ;
+}
+
+.card-body-visualiser{
+    justify-content: center;
+}
+
+.wind-turbine-animated{
+    justify-content: left;
 }
 
 
@@ -126,7 +139,20 @@ label {
     color: #000;
 }
 
+#blades-1, #blades-2, #blades-3{
+    animation: turbine 2s infinite linear;
+    transform-origin: 227px 247px;
+    transform-box: fill-box;
+}
 
+@keyframes turbine {
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
 
 
 
