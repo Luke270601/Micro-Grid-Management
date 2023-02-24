@@ -113,6 +113,13 @@ label {
     color: white;
 }
 
+.simulation-panel{
+    display: grid;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0;
+}
+
 .side-bar {
     align-content: center;
     width: 160px;
@@ -121,7 +128,7 @@ label {
 }
 
 .settings-container {
-    padding-top: 4%;
+    padding-top: 3%;
     max-width: available;
     display: flex;
     gap: 5%;

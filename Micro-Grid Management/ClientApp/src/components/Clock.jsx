@@ -4,9 +4,7 @@ export function Clock() {
 
     function updateClock() {
         hours++;
-
-        var meridiem = "AM";
-
+        
         if (hours > 23) {
             hours = 0
         }
