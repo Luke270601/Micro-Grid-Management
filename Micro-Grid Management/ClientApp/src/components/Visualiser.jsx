@@ -22,6 +22,7 @@ export function Visualiser() {
     };
 
     function getSimData() {
+        document.getElementById("toggle-btn").disabled = true;
 
         let duration = document.getElementById("duration").value
         let turbineCount = document.getElementById("turbines").value
@@ -44,7 +45,12 @@ export function Visualiser() {
         }
     }
 
-    function runSim(json, turbineCount, panelCount, houseCount) {
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+
+    async function runSim(json, turbineCount, panelCount, houseCount) {
         startAnimation()
         let count = 0
         let hourCount = 0;
@@ -70,8 +76,8 @@ export function Visualiser() {
                 }
                 count++;
             }
-            
-            if(count === totalAgents){
+
+            if (count === totalAgents) {
                 count = 0
                 let houseResults = "";
                 let turbineResults = "";
@@ -82,12 +88,13 @@ export function Visualiser() {
                 hourCount++;
 
                 for (let h = 0; h < houseList.length; h++) {
-                    
+
                     houseDemand += parseFloat(houseList[h].Message)
                     houseResults += houseList[h].Sender + " : " + houseList[h].Message + " KW/h\n"
-                    if (h === houseList.length-1){
+                    if (h === houseList.length - 1) {
                         console.log(houseResults)
-                        console.log("Total Demand: " + houseDemand + " KW/h\n")
+                        await sleep(1000);
+                        document.getElementById('house-message').innerText = ("Total Demand: " + Math.round(houseDemand) + " KW/h\n");
                     }
                 }
 
@@ -95,19 +102,21 @@ export function Visualiser() {
 
                     turbineSupply += parseFloat(turbineList[t].Message)
                     turbineResults += turbineList[t].Sender + " : " + turbineList[t].Message + " KW/h\n"
-                    if (t === turbineList.length-1){
+                    if (t === turbineList.length - 1) {
                         console.log(turbineResults)
-                        console.log("Total Turbine Supply: " + turbineSupply + " KW/h\n")
+                        await sleep(1000);
+                        document.getElementById('turbine-message').innerText = ("Total Turbine Supply: " + Math.round(turbineSupply) + " KW/h\n");
                     }
                 }
 
                 for (let p = 0; p < panelList.length; p++) {
-                    
+
                     solarSupply += parseFloat(panelList[p].Message)
                     panelResults += panelList[p].Sender + " : " + panelList[p].Message + " KW/h\n"
-                    if (p === panelList.length-1){
+                    if (p === panelList.length - 1) {
                         console.log(panelResults)
-                        console.log("Total Solar Supply: " + solarSupply + " KW/h\n")
+                        await sleep(1000);
+                        document.getElementById('panel-message').innerText = ("Total Solar Supply: " + Math.round(solarSupply) + " KW/h\n");
                     }
                 }
 
@@ -117,7 +126,9 @@ export function Visualiser() {
                 panelList = [];
             }
         }
-        setTimeout(stopAnimation, 12)
+        stopAnimation()
+        document.getElementById("toggle-btn").disabled = false;
+
     }
 
     function startAnimation() {
@@ -144,20 +155,25 @@ export function Visualiser() {
                                     className={"btn btn-outline-dark"}></button>
                         </div>
                         <div className="wind-turbine-animated grid-item">
+                            <div id={"turbine-message"}></div>
                             <WindTurbine></WindTurbine>
                         </div>
                         <div className="card-body-visualiser grid-item">
+                            <div id={"panel-message"}></div>
                             <Panel></Panel>
                         </div>
                         <div className="card-body-visualiser">
                         </div>
                         <div className="grid-manager-icon">
                             <GridManager></GridManager>
+                            <div id={"grid-message"}></div>
                         </div>
                         <div className="card-body-visualiser">
                             <Clock></Clock>
+                            <div id={"house-message"}></div>
                         </div>
                         <div className="grid-icon">
+                            <div id={"grid-message"}></div>
                             <Grid></Grid>
                         </div>
                         <div className="house-icon">
