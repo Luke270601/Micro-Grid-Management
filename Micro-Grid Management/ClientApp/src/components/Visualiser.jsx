@@ -6,24 +6,30 @@ import $ from "jquery";
 
 export function Visualiser() {
 
-    const [charge, setCharge] = useState(0);
+    let [charge, setCharge] = useState(0);
 
-    const handleIncreaseCharge = () => {
-        if (charge < 100) {
-            setCharge(charge + 1);
-            Math.round(charge)
+    const handleIncreaseCharge = (power) => {
+        if (charge / 2000 < 100) {
+            setCharge(charge + Math.round(power / 1000));
+            charge += Math.round(power / 1000)
         }
     };
 
-    const handleDecreaseCharge = () => {
-        if (charge > 0) {
-            setCharge(charge - 10);
+    const handleDecreaseCharge = (power) => {
+        if (charge / 2000 > 0) {
+            setCharge(charge - Math.round(power / 1000));
+            charge = charge - Math.round(power / 1000)
         }
+    };
+
+    const handleEmpty = () => {
+        setCharge(0)
+        charge = 0
     };
 
     function getSimData() {
         document.getElementById("toggle-btn").disabled = true;
-
+        handleEmpty()
         let duration = document.getElementById("duration").value
         let turbineCount = document.getElementById("turbines").value
         let panelCount = document.getElementById("panels").value
@@ -39,10 +45,13 @@ export function Visualiser() {
                 })
                 .fail(function () {
                     alert("Web api not currently active, please try again later.")
+                    document.getElementById("toggle-btn").disabled = false;
                 });
         } else {
             alert("All fields must be filled (Duration must be 1 and house count exceed 0)")
+            document.getElementById("toggle-btn").disabled = false;
         }
+
     }
 
     function sleep(ms) {
@@ -61,7 +70,6 @@ export function Visualiser() {
         let data = eval(json)
 
         for (let i = 0; i < data.length; i++) {
-
             if (data[i].Sender.includes("houseAgent") || data[i].Sender.includes("solarPanel") || data[i].Sender.includes("turbine")) {
                 if (data[i].Sender.includes("houseAgent")) {
                     houseList.push(data[i])
@@ -92,7 +100,6 @@ export function Visualiser() {
                     houseDemand += parseFloat(houseList[h].Message)
                     houseResults += houseList[h].Sender + " : " + houseList[h].Message + " KW/h\n"
                     if (h === houseList.length - 1) {
-                        console.log(houseResults)
                         await sleep(1000);
                         document.getElementById('house-message').innerText = ("Total Demand: " + Math.round(houseDemand) + " KW/h\n");
                     }
@@ -103,7 +110,6 @@ export function Visualiser() {
                     turbineSupply += parseFloat(turbineList[t].Message)
                     turbineResults += turbineList[t].Sender + " : " + turbineList[t].Message + " KW/h\n"
                     if (t === turbineList.length - 1) {
-                        console.log(turbineResults)
                         await sleep(1000);
                         document.getElementById('turbine-message').innerText = ("Total Turbine Supply: " + Math.round(turbineSupply) + " KW/h\n");
                     }
@@ -114,21 +120,33 @@ export function Visualiser() {
                     solarSupply += parseFloat(panelList[p].Message)
                     panelResults += panelList[p].Sender + " : " + panelList[p].Message + " KW/h\n"
                     if (p === panelList.length - 1) {
-                        console.log(panelResults)
                         await sleep(1000);
                         document.getElementById('panel-message').innerText = ("Total Solar Supply: " + Math.round(solarSupply) + " KW/h\n");
                     }
                 }
 
+                if (data[i + 1].Message.split(" ")[0] === "Removed:") {
+                    handleDecreaseCharge(parseFloat(data[i + 1].Message.split(" ")[1]))
+                }
+
+                if (data[i + 1].Message.split(" ")[0] === "Stored:") {
+                    handleIncreaseCharge(parseFloat(data[i + 1].Message.split(" ")[1]))
+                }
+
+                if (data[i + 1].Message.split(" ")[0] === "Remaining:") {
+                    handleEmpty()
+                }
 
                 houseList = [];
                 turbineList = [];
                 panelList = [];
+                turbineSupply = 0
+                solarSupply = 0
+                houseDemand = 0
             }
         }
         stopAnimation()
         document.getElementById("toggle-btn").disabled = false;
-
     }
 
     function startAnimation() {
@@ -151,8 +169,6 @@ export function Visualiser() {
                     <div className={"visualiser-container"}>
                         <div className="card-body-visualiser">
                             <Battery charge={charge}/>
-                            <button type={"button"} onClick={handleIncreaseCharge}
-                                    className={"btn btn-outline-dark"}></button>
                         </div>
                         <div className="wind-turbine-animated grid-item">
                             <div id={"turbine-message"}></div>

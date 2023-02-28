@@ -4,7 +4,8 @@
 .settings-card {
     opacity: 0;
     width: 500px;
-    height: 500px;
+    padding-bottom: 10px;
+    height: min-content;
     transform: translateY(50px);
     animation: fade-in-upwards 0.5s ease-out forwards;
 }
@@ -129,7 +130,6 @@ label {
 
 .settings-container {
     padding-top: 3%;
-    max-width: available;
     display: flex;
     gap: 5%;
 }
