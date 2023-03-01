@@ -5,13 +5,8 @@
     <projectFile profileName="Micro_Grid_Management">Micro-Grid Management/Micro-Grid Management.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Battery now responds to changes in charge/discharge and will empty when demand is still remaining">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Battery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Battery.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Clock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Clock.jsx" afterDir="false" />
+    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Battery capacity tracking added for visualisers as well as a redesigned clock element that ticks over an hour in time with the simulation">
       <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Visualiser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Visualiser.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Simulate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Simulate.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +190,7 @@
       <workItem from="1677589912254" duration="4286000" />
       <workItem from="1677606277845" duration="10273000" />
       <workItem from="1677623159106" duration="1966000" />
-      <workItem from="1677700767712" duration="594000" />
+      <workItem from="1677700767712" duration="2049000" />
     </task>
     <task id="LOCAL-00002" summary="Removed necessary class files">
       <created>1675216378406</created>
@@ -323,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677610946081</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Battery capacity tracking added for visualisers as well as a redesigned clock element that ticks over an hour in time with the simulation">
+      <created>1677703194536</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1677703194536</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,7 +376,8 @@
     <MESSAGE value="Modified clock timer, and began constructing a formatting function for ui elements of the visualiser" />
     <MESSAGE value="Supply and demand totals display on visualiser with the animations stopping upon its completion" />
     <MESSAGE value="Battery now responds to changes in charge/discharge and will empty when demand is still remaining" />
-    <option name="LAST_COMMIT_MESSAGE" value="Battery now responds to changes in charge/discharge and will empty when demand is still remaining" />
+    <MESSAGE value="Battery capacity tracking added for visualisers as well as a redesigned clock element that ticks over an hour in time with the simulation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Battery capacity tracking added for visualisers as well as a redesigned clock element that ticks over an hour in time with the simulation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

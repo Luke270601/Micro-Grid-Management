@@ -7,6 +7,7 @@ import $ from "jquery";
 export function Visualiser() {
 
     let [charge, setCharge] = useState(0);
+    let fromGrid = 0;
 
     const handleIncreaseCharge = (power) => {
         if (charge / 2000 < 100) {
@@ -142,6 +143,8 @@ export function Visualiser() {
                 }
 
                 if (data[i + 1].Message.split(" ")[0] === "Remaining:") {
+                    fromGrid += parseFloat(data[i + 1].Message.split(" ")[1])
+                    document.getElementById("grid-message").innerText = "Total From Grid: " + fromGrid + " KW/h";
                     handleEmpty()
                 }
 
@@ -195,7 +198,6 @@ export function Visualiser() {
                         </div>
                         <div className="grid-manager-icon">
                             <GridManager></GridManager>
-                            <div id={"grid-message"}></div>
                         </div>
                         <div className="card-body-visualiser">
                             <div id={"house-message"}></div>
