@@ -10,7 +10,7 @@ const Battery = ({ charge }) => {
     return (
         <div className="battery-container">
             <div className="battery-level" style={{ height: `${batteryLevel}%` }}>
-                <div className="battery-status">{batteryLevel}%</div>
+                <div className="battery-status"></div>
             </div>
         </div>
     );

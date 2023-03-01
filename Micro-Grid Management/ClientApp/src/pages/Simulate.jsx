@@ -10,7 +10,7 @@ export function Simulate() {
             <TabPanel/>
                 <div className={"settings-container"}>
                     <div className="settings-card card">
-                        <h3 className="card-header text-lg-start">Settings</h3>
+                        <h3 className="settings-card-header text-lg-start">Settings</h3>
                         <div className="card-body">
                             <form>
                                 <div className="form-group">

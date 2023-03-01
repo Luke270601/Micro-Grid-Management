@@ -1,7 +1,7 @@
 ﻿import React, {useState} from "react";
 import Battery from "./Battery";
 import {House, Panel, WindTurbine, Grid, GridManager} from "./wind-turbine";
-import {Clock} from "./Clock";
+import {Clock, updateClock} from "./Clock";
 import $ from "jquery";
 
 export function Visualiser() {
@@ -10,21 +10,23 @@ export function Visualiser() {
 
     const handleIncreaseCharge = (power) => {
         if (charge / 2000 < 100) {
-            setCharge(charge + Math.round(power / 1000));
-            charge += Math.round(power / 1000)
+            setCharge((charge + (power / 1000))/2000*100);
+            document.getElementById("capacity").innerText = power/1000 + "/2000 MW"
         }
     };
 
     const handleDecreaseCharge = (power) => {
         if (charge / 2000 > 0) {
-            setCharge(charge - Math.round(power / 1000));
-            charge = charge - Math.round(power / 1000)
+            setCharge(charge - (power / 1000)/2000*100);
+            document.getElementById("capacity").innerText = power/1000 + "/2000 MW"
         }
     };
 
     const handleEmpty = () => {
         setCharge(0)
         charge = 0
+        let power = 0;
+        document.getElementById("capacity").innerText = power + "/2000 MW"
     };
 
     function getSimData() {
@@ -60,7 +62,10 @@ export function Visualiser() {
 
 
     async function runSim(json, turbineCount, panelCount, houseCount) {
+        let hours = -1;
+
         startAnimation()
+
         let count = 0
         let hourCount = 0;
         let totalAgents = parseInt(turbineCount) + parseInt(panelCount) + parseInt(houseCount)
@@ -70,6 +75,7 @@ export function Visualiser() {
         let data = eval(json)
 
         for (let i = 0; i < data.length; i++) {
+
             if (data[i].Sender.includes("houseAgent") || data[i].Sender.includes("solarPanel") || data[i].Sender.includes("turbine")) {
                 if (data[i].Sender.includes("houseAgent")) {
                     houseList.push(data[i])
@@ -86,6 +92,8 @@ export function Visualiser() {
             }
 
             if (count === totalAgents) {
+                updateClock(hours)
+                hours++
                 count = 0
                 let houseResults = "";
                 let turbineResults = "";
@@ -165,10 +173,15 @@ export function Visualiser() {
         <>
             <div className={"simulation-panel"}>
                 <div className="card visualiser-card">
-                    <h3 className="card-header text-lg-start ">Visualiser</h3>
+                    <div className={"visualiser-header"}>
+                        <h3 className="card-header ">Visualiser
+                        </h3>
+                        <Clock></Clock>
+                    </div>
                     <div className={"visualiser-container"}>
                         <div className="card-body-visualiser">
                             <Battery charge={charge}/>
+                            <div id={"capacity"}>0/2000 Mw</div>
                         </div>
                         <div className="wind-turbine-animated grid-item">
                             <div id={"turbine-message"}></div>
@@ -185,7 +198,6 @@ export function Visualiser() {
                             <div id={"grid-message"}></div>
                         </div>
                         <div className="card-body-visualiser">
-                            <Clock></Clock>
                             <div id={"house-message"}></div>
                         </div>
                         <div className="grid-icon">

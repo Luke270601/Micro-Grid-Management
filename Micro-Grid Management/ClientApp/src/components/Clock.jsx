@@ -1,31 +1,29 @@
 export function Clock() {
 
-    let hours = 0
+    
+    return (
+        <div id="clock">
+            00:00
+        </div>
+    );
+}
 
-    function updateClock() {
-        hours++;
-        
-        if (hours > 23) {
-            hours = 0
-        }
+export function updateClock(hours) {
+    
+    hours++;
 
-        var clockDiv = document.getElementById('clock');
-
-        if (hours <= 9) {
-            clockDiv.innerText = "0" + hours + ":" + "00";
-        }
-        
-        if (hours > 9) {
-            clockDiv.innerText = hours + ":" + "00";
-        }
-
+    if (hours > 23) {
+        hours = 0
     }
 
-    setInterval(updateClock, 1000);
+    var clockDiv = document.getElementById('clock');
 
-    return (
-        <body>
-        <div id="clock"></div>
-        </body>
-    );
+    if (hours <= 9) {
+        clockDiv.innerText = "0" + hours + ":" + "00";
+    }
+
+    if (hours > 9) {
+        clockDiv.innerText = hours + ":" + "00";
+    }
+
 }
