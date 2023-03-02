@@ -207,7 +207,7 @@ export function Visualiser() {
                         </div>
                     </div>
                 </div>
-                <button id={"toggle-btn"} type={"button"} className={"btn btn-primary"} onClick={getSimData}>Start
+                <button id={"toggle-btn"} type={"button"} className={"sim-start-button"} onClick={getSimData}>Start
                     Sim
                 </button>
             </div>

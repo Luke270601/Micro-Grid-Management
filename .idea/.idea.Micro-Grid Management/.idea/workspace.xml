@@ -5,10 +5,9 @@
     <projectFile profileName="Micro_Grid_Management">Micro-Grid Management/Micro-Grid Management.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Grid usage is tracked in div">
+    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Fixed alignment of elements in visualiser">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Visualiser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Visualiser.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/wind-turbine.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/wind-turbine.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/css/custom.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -195,7 +194,7 @@
       <workItem from="1677623159106" duration="1966000" />
       <workItem from="1677700767712" duration="2049000" />
       <workItem from="1677706392390" duration="24000" />
-      <workItem from="1677777970947" duration="4946000" />
+      <workItem from="1677777970947" duration="6141000" />
     </task>
     <task id="LOCAL-00002" summary="Removed necessary class files">
       <created>1675216378406</created>
@@ -337,7 +336,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677706409556</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Fixed alignment of elements in visualiser">
+      <created>1677784840509</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1677784840509</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,7 +396,8 @@
     <MESSAGE value="Battery now responds to changes in charge/discharge and will empty when demand is still remaining" />
     <MESSAGE value="Battery capacity tracking added for visualisers as well as a redesigned clock element that ticks over an hour in time with the simulation" />
     <MESSAGE value="Grid usage is tracked in div" />
-    <option name="LAST_COMMIT_MESSAGE" value="Grid usage is tracked in div" />
+    <MESSAGE value="Fixed alignment of elements in visualiser" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed alignment of elements in visualiser" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
