@@ -20,7 +20,8 @@
 
 .visualiser-container{
     display: grid;
-    grid-template-columns: 348px 348px 348px ;
+    grid-template-columns: 366px 366px 366px ;
+    grid-template-rows: 220px 270px 288px;
 }
 
 @keyframes fade-in-upwards {
@@ -57,7 +58,7 @@
 
 .battery-container {
     width: 100px;
-    height: 200px;
+    height: 180px;
     border: 2px solid #000;
     border-radius: 20px;
     position: relative;
@@ -123,9 +124,8 @@ label {
 }
 
 .simulation-panel{
-    display: grid;
-    flex-wrap: nowrap;
-    align-items: center;
+    display: block;
+    text-align: center;
     gap: 0;
 }
 
@@ -168,21 +168,12 @@ li {
     background-color: #585664;
 }
 
-.house-icon{
-    display: flex;
-    align-items: end;
-    padding-top: 25px;
+.house-icon, .grid-manager-icon, .grid-icon, .battery-icon, .solar-icon, .turbine-icon{
+    display: inline-block;
+    min-width: 200px;
+    text-align: center;
 }
 
-.grid-manager-icon{
-    display: flex;
-    align-items: end;
-}
-
-.grid-icon{
-    display: flex;
-    align-items: center;
-}
 
 .visualiser-header{
     display: flex;
