@@ -1,6 +1,7 @@
 /* Animation for styling for ui cards */
 .settings-card {
     opacity: 0;
+    border: solid #123367 2px;
     width: 500px;
     padding-bottom: 10px;
     height: min-content;
@@ -11,6 +12,7 @@
 .visualiser-card {
     opacity: 0;
     width: 1100px;
+    border: solid #123367 2px;
     height: 865px;
     transform: translateX(50px);
     animation: fade-in-from-right 0.5s ease-out forwards;
@@ -178,6 +180,15 @@ li {
     justify-content: flex-end;
 }
 
+.message {
+    background-color: #3F4856;
+    background-size: contain;
+    color: white;
+    border: solid #123367 2px;
+    box-shadow: #333333;
+    text-align: center;
+}
+
 
 /* Button CSS by Google From https://getcssscan.com/css-buttons-examples */
 .sim-start-button {
@@ -259,4 +270,125 @@ li {
     font-family: "Concert One", cursive;
     font-size: 30px;
     color: #eeeeee;
+}
+
+/* power request/transfer animation */
+
+#line1, #line2, #line3, #line4, #line5, #line6 {
+    background-color: black;
+    border-radius: 50%;
+    transform-origin: top;
+    transform-box: fill-box;
+    display: block;
+    opacity: 0;
+    width: 10px;
+    height: 10px;
+}
+
+@keyframes batteryOutLine {
+    0% {
+        opacity: 100%;
+        transform: translate(183px, 0);
+    }
+    50% {
+        opacity: 100%;
+        transform: translate(183px, 140px);
+    }
+    99.99% {
+        opacity: 100%;
+        transform: translate(450px, 140px);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes batteryInLine {
+    0% {
+        opacity: 100%;
+        transform: translate(450px, 140px);
+    }
+    50% {
+        opacity: 100%;
+        transform: translate(183px, 140px);
+    }
+    99.99% {
+        opacity: 100%;
+        transform: translate(183px, 0);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes turbineLine {
+    0% {
+        opacity: 100%;
+        transform: translate(183px, 0);
+    }
+    50% {
+        opacity: 100%;
+        transform: translate(183px, 40px);
+    }
+    99.99% {
+        opacity: 100%;
+        transform: translate(183px, 40px)
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes solarLine {
+    0% {
+        opacity: 100%;
+        transform: translate(183px, 0);
+    }
+    50% {
+        opacity: 100%;
+        transform: translate(183px, 140px);
+    }
+    99.99% {
+        opacity: 100%;
+        transform: translate(-100px, 140px);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes gridLine {
+    0% {
+        opacity: 100%;
+        transform: translate(80px, -140px);
+    }
+    50% {
+        opacity: 100%;
+        transform: translate(-183px, -140px);
+    }
+    99.99% {
+        opacity: 100%;
+        transform: translate(-183px, 0px);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes houseLine {
+    0% {
+        opacity: 100%;
+        transform: translate(183px, 0);
+    }
+    50% {
+        opacity: 100%;
+        transform: translate(183px, -140px);
+    }
+    99.99% {
+        opacity: 100%;
+        transform: translate(-100px,-140px);
+    }
+    100% {
+        opacity: 0;
+    }
 }

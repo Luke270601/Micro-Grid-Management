@@ -8,6 +8,7 @@ export function Visualiser() {
 
     let [charge, setCharge] = useState(0);
     let fromGrid = 0;
+    let stored = 0;
 
     const handleIncreaseCharge = (power) => {
         if (charge / 2000 < 100) {
@@ -109,7 +110,9 @@ export function Visualiser() {
                     houseDemand += parseFloat(houseList[h].Message)
                     houseResults += houseList[h].Sender + " : " + houseList[h].Message + " KW/h\n"
                     if (h === houseList.length - 1) {
-                        await sleep(1000);
+                        document.getElementById("line5").style.animation = "houseLine 2s linear"
+                        await sleep(2000);
+                        document.getElementById("line5").style.animation = ""
                         document.getElementById('house-message').innerText = ("Total Demand: " + Math.round(houseDemand) + " KW/h\n");
                     }
                 }
@@ -119,7 +122,9 @@ export function Visualiser() {
                     turbineSupply += parseFloat(turbineList[t].Message)
                     turbineResults += turbineList[t].Sender + " : " + turbineList[t].Message + " KW/h\n"
                     if (t === turbineList.length - 1) {
-                        await sleep(1000);
+                        document.getElementById("line2").style.animation = "turbineLine 2s linear"
+                        await sleep(2000);
+                        document.getElementById("line2").style.animation = ""
                         document.getElementById('turbine-message').innerText = ("Total Turbine Supply: " + Math.round(turbineSupply) + " KW/h\n");
                     }
                 }
@@ -129,20 +134,36 @@ export function Visualiser() {
                     solarSupply += parseFloat(panelList[p].Message)
                     panelResults += panelList[p].Sender + " : " + panelList[p].Message + " KW/h\n"
                     if (p === panelList.length - 1) {
-                        await sleep(1000);
+                        document.getElementById("line3").style.animation = "solarLine 2s linear"
+                        await sleep(2000);
+                        document.getElementById("line3").style.animation = ""
                         document.getElementById('panel-message').innerText = ("Total Solar Supply: " + Math.round(solarSupply) + " KW/h\n");
                     }
                 }
 
                 if (data[i + 1].Message.split(" ")[0] === "Removed:") {
-                    handleDecreaseCharge(Math.round((parseFloat((data[i + 1].Message.split(" ")[1])) + Number.EPSILON) * 100) / 100)
+                    document.getElementById("grid-manager-message").innerText = "Gird Status: Requesting supply from battery"
+                    document.getElementById("line1").style.animation = "batteryOutLine 2s linear"
+                    await sleep(2000)
+                    document.getElementById("line1").style.animation = ""
+                    stored -= Math.round((parseFloat((data[i + 1].Message.split(" ")[1])) + Number.EPSILON) * 100) / 100
+                    handleDecreaseCharge(stored)
                 }
 
                 if (data[i + 1].Message.split(" ")[0] === "Stored:") {
-                    handleIncreaseCharge(Math.round((parseFloat((data[i + 1].Message.split(" ")[1])) + Number.EPSILON) * 100) / 100)
+                    document.getElementById("grid-manager-message").innerText = "Gird Status: Storing excess energy"
+                    document.getElementById("line1").style.animation = "batteryInLine 2s linear"
+                    stored = Math.round((parseFloat((data[i + 1].Message.split(" ")[1])) + Number.EPSILON) * 100) / 100
+                    await sleep(2000)
+                    document.getElementById("line1").style.animation = ""
+                    handleIncreaseCharge(stored)
                 }
 
                 if (data[i + 1].Message.split(" ")[0] === "Remaining:") {
+                    document.getElementById("grid-manager-message").innerText = "Gird Status: Requesting supply from grid"
+                    document.getElementById("line4").style.animation = "gridLine 2s linear"
+                    await sleep(2000)
+                    document.getElementById("line4").style.animation = "0"
                     fromGrid += (Math.round((parseFloat((data[i + 1].Message.split(" ")[1])) + Number.EPSILON) * 100) / 100)
                     document.getElementById("grid-message").innerText = "Total From Grid: " + fromGrid + " KW/h";
                     handleEmpty()
@@ -172,35 +193,42 @@ export function Visualiser() {
                     <div className={"visualiser-container"}>
                         <div className="card-body-visualiser battery-icon">
                             <Battery charge={charge}/>
-                            <div id={"capacity"}>Energy Stored: 0/2000 Mw</div>
+                            <div id={"capacity"} className={"message"}>Energy Stored: 0/2000 Mw</div>
+                            <div id="line1"></div>
                         </div>
                         <div className="wind-turbine-animated turbine-icon">
                             <WindTurbine></WindTurbine>
-                            <div id={"turbine-message"}>Total Turbine Supply: 0 KW/h</div>
+                            <div id={"turbine-message"} className={"message"}>Total Turbine Supply: 0 KW/h</div>
+                            <div id="line2"></div>
                         </div>
                         <div className="card-body-visualiser solar-icon">
                             <Panel></Panel>
-                            <div id={"panel-message"}>Total Solar Supply: 0 KW/h</div>
+                            <div id={"panel-message"} className={"message"}>Total Solar Supply: 0 KW/h</div>
+                            <div id="line3"></div>
                         </div>
                         <div className="card-body-visualiser">
                         </div>
                         <div className="grid-manager-icon">
                             <GridManager></GridManager>
+                            <div id="line4"></div>
                         </div>
                         <div className="card-body-visualiser">
                         </div>
                         <div className="grid-icon">
-                            <div id={"grid-message"}>Total From Grid: 0 KW/h</div>
+                            <div id="line6"></div>
+                            <div id={"grid-message"} className={"message"}>Total From Grid: 0 KW/h</div>
                             <Grid></Grid>
                         </div>
                         <div className="house-icon">
-                            <br/>
+                            <div id="line6"></div>
+                            <div id={"grid-manager-message"} className={"message"}>Grid Status: </div>
                             <br/>
                             <br/>
                             <House></House>
                         </div>
                         <div className="house-icon">
-                            <div id={"house-message"}>Total House Demand: 0 KW/h</div>
+                            <div id="line5"></div>
+                            <div id={"house-message"} className={"message"}>Total House Demand: 0 KW/h</div>
                             <br/>
                             <br/>
                             <House></House>
