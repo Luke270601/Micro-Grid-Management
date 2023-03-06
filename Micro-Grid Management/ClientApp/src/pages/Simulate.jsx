@@ -4,6 +4,15 @@ import React from "react";
 import {Visualiser} from "../components/Visualiser";
 
 export function Simulate() {
+    
+    let interval = 0;
+
+    function updateSlider (){
+        interval = document.getElementById("slider").value/10
+        document.getElementById("seconds").innerText = interval
+    }
+    
+    
 
     return (
         <div id={"simulate"}>
@@ -49,6 +58,11 @@ export function Simulate() {
                                         <option>November</option>
                                         <option>December</option>
                                     </select>
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="duration">Interval of action (seconds)</label><br/>
+                                    <input id={"slider"} type="range" min="1" max="50" onChange={updateSlider} onLoad={updateSlider}/>
+                                    <text className={"form-control"} id={"seconds"}>0</text>
                                 </div>
                             </form>
                         </div>

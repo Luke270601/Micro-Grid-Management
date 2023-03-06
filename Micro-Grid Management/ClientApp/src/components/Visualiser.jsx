@@ -1,6 +1,15 @@
 ﻿import React, {useState} from "react";
 import Battery from "./Battery";
-import {House, Panel, WindTurbine, Grid, GridManager, stopAnimation, startAnimation} from "./wind-turbine";
+import {
+    House,
+    Panel,
+    WindTurbine,
+    Grid,
+    GridManager,
+    stopAnimation,
+    startAnimation,
+    EnergyMarker
+} from "./wind-turbine";
 import {Clock, updateClock} from "./Clock";
 import $ from "jquery";
 
@@ -9,18 +18,34 @@ export function Visualiser() {
     let [charge, setCharge] = useState(0);
     let fromGrid = 0;
     let stored = 0;
+    let interval = 0;
 
+    function addItemToList(itemText, listName) {
+        const list = document.getElementById(listName);
+        const newItem = document.createElement("li");
+        const textNode = document.createTextNode(itemText);
+        newItem.appendChild(textNode);
+        list.appendChild(newItem);
+    }
+
+    function clearList(listName) {
+        const list = document.getElementById(listName);
+        while (list.firstChild) {
+            list.removeChild(list.firstChild);
+        }
+    }
+    
     const handleIncreaseCharge = (power) => {
-        if (charge / 2000 < 100) {
+        if (((power / 1000) / 2000) * 100 < 100) {
             setCharge((charge + (power / 1000)) / 2000 * 100);
-            document.getElementById("capacity").innerText = "Energy Stored: " + power / 1000 + "/2000 MW"
+            document.getElementById("capacity").innerText = "Energy Stored: " + power / 1000 + "/2000 MW/h"
         }
     };
 
     const handleDecreaseCharge = (power) => {
-        if (charge / 2000 > 0) {
+        if (((power / 1000) / 2000) * 100 > 0) {
             setCharge(charge - (power / 1000) / 2000 * 100);
-            document.getElementById("capacity").innerText = "Energy Stored: " + power / 1000 + "/2000 MW"
+            document.getElementById("capacity").innerText = "Energy Stored: " + power / 1000 + "/2000 MW/h"
         }
     };
 
@@ -28,18 +53,23 @@ export function Visualiser() {
         setCharge(0)
         charge = 0
         let power = 0;
-        document.getElementById("capacity").innerText = "Energy Stored: " + power / 1000 + "/2000 MW"
+        document.getElementById("capacity").innerText = "Energy Stored: " + power / 1000 + "/2000 MW/h"
     };
 
     function getSimData() {
         document.getElementById("toggle-btn").disabled = true;
+        document.getElementById("turbines").disabled = true;
+        document.getElementById("duration").disabled = true;
+        document.getElementById("panels").disabled = true;
+        document.getElementById("houses").disabled = true;
         handleEmpty()
         let duration = document.getElementById("duration").value
         let turbineCount = document.getElementById("turbines").value
         let panelCount = document.getElementById("panels").value
         let houseCount = document.getElementById("houses").value
+        interval = parseFloat(document.getElementById("seconds").innerText)
 
-        if (duration < 2 && turbineCount != null && panelCount != null && houseCount > 0) {
+        if (duration < 2 && turbineCount != null && panelCount != null && houseCount > 0 && interval > 0) {
             $.getJSON("https://localhost:44314/api/Simulation?duration=" + duration + "&turbineCount=" + turbineCount + "&panelCount=" + panelCount + "&houseCount=" + houseCount, function () {
 
             })
@@ -50,10 +80,18 @@ export function Visualiser() {
                 .fail(function () {
                     alert("Web api not currently active, please try again later.")
                     document.getElementById("toggle-btn").disabled = false;
+                    document.getElementById("turbines").disabled = false;
+                    document.getElementById("duration").disabled = false;
+                    document.getElementById("panels").disabled = false;
+                    document.getElementById("houses").disabled = false;
                 });
         } else {
             alert("All fields must be filled (Duration must be 1 and house count exceed 0)")
             document.getElementById("toggle-btn").disabled = false;
+            document.getElementById("turbines").disabled = false;
+            document.getElementById("duration").disabled = false;
+            document.getElementById("panels").disabled = false;
+            document.getElementById("houses").disabled = false;
         }
 
     }
@@ -64,7 +102,7 @@ export function Visualiser() {
 
 
     async function runSim(json, turbineCount, panelCount, houseCount) {
-        let hours = -1;
+        let hours = 0;
 
         startAnimation()
 
@@ -94,57 +132,58 @@ export function Visualiser() {
             }
 
             if (count === totalAgents) {
-                updateClock(hours)
                 hours++
+                interval = parseFloat(document.getElementById("seconds").innerText)
                 count = 0
-                let houseResults = "";
-                let turbineResults = "";
-                let panelResults = "";
                 let houseDemand = 0;
                 let turbineSupply = 0;
                 let solarSupply = 0;
                 hourCount++;
 
+                clearList("house-list")
                 for (let h = 0; h < houseList.length; h++) {
-
                     houseDemand += parseFloat(houseList[h].Message)
-                    houseResults += houseList[h].Sender + " : " + houseList[h].Message + " KW/h\n"
+                    addItemToList((houseList[h].Sender + " : " + houseList[h].Message + " KW/h\n"), "house-list")
                     if (h === houseList.length - 1) {
-                        document.getElementById("line5").style.animation = "houseLine 2s linear"
-                        await sleep(2000);
+                        interval = parseFloat(document.getElementById("seconds").innerText)
+                        document.getElementById("line5").style.animation = "houseLine " + interval + "s linear"
+                        await sleep(interval * 1000);
                         document.getElementById("line5").style.animation = ""
                         document.getElementById('house-message').innerText = ("Total Demand: " + Math.round(houseDemand) + " KW/h\n");
                     }
                 }
-
+                
+                clearList("turbine-list")
                 for (let t = 0; t < turbineList.length; t++) {
-
                     turbineSupply += parseFloat(turbineList[t].Message)
-                    turbineResults += turbineList[t].Sender + " : " + turbineList[t].Message + " KW/h\n"
+                    addItemToList((turbineList[t].Sender + " : " + turbineList[t].Message + " KW/h\n"), "turbine-list")
                     if (t === turbineList.length - 1) {
-                        document.getElementById("line2").style.animation = "turbineLine 2s linear"
-                        await sleep(2000);
+                        interval = parseFloat(document.getElementById("seconds").innerText)
+                        document.getElementById("line2").style.animation = "turbineLine  " + interval + "s linear"
+                        await sleep(interval * 1000);
                         document.getElementById("line2").style.animation = ""
                         document.getElementById('turbine-message').innerText = ("Total Turbine Supply: " + Math.round(turbineSupply) + " KW/h\n");
                     }
                 }
 
+                clearList("panel-list")
                 for (let p = 0; p < panelList.length; p++) {
-
                     solarSupply += parseFloat(panelList[p].Message)
-                    panelResults += panelList[p].Sender + " : " + panelList[p].Message + " KW/h\n"
+                    addItemToList((panelList[p].Sender + " : " + panelList[p].Message + " KW/h\n"), "panel-list")
                     if (p === panelList.length - 1) {
-                        document.getElementById("line3").style.animation = "solarLine 2s linear"
-                        await sleep(2000);
+                        interval = parseFloat(document.getElementById("seconds").innerText)
+                        document.getElementById("line3").style.animation = "solarLine  " + interval + "s linear"
+                        await sleep(interval * 1000);
                         document.getElementById("line3").style.animation = ""
                         document.getElementById('panel-message').innerText = ("Total Solar Supply: " + Math.round(solarSupply) + " KW/h\n");
                     }
                 }
 
+                interval = parseFloat(document.getElementById("seconds").innerText)
                 if (data[i + 1].Message.split(" ")[0] === "Removed:") {
                     document.getElementById("grid-manager-message").innerText = "Gird Status: Requesting supply from battery"
-                    document.getElementById("line1").style.animation = "batteryOutLine 2s linear"
-                    await sleep(2000)
+                    document.getElementById("line1").style.animation = "batteryOutLine  " + interval + "s linear"
+                    await sleep(interval * 1000);
                     document.getElementById("line1").style.animation = ""
                     stored -= Math.round((parseFloat((data[i + 1].Message.split(" ")[1])) + Number.EPSILON) * 100) / 100
                     handleDecreaseCharge(stored)
@@ -152,17 +191,17 @@ export function Visualiser() {
 
                 if (data[i + 1].Message.split(" ")[0] === "Stored:") {
                     document.getElementById("grid-manager-message").innerText = "Gird Status: Storing excess energy"
-                    document.getElementById("line1").style.animation = "batteryInLine 2s linear"
+                    document.getElementById("line1").style.animation = "batteryInLine  " + interval + "s linear"
                     stored = Math.round((parseFloat((data[i + 1].Message.split(" ")[1])) + Number.EPSILON) * 100) / 100
-                    await sleep(2000)
+                    await sleep(interval * 1000);
                     document.getElementById("line1").style.animation = ""
                     handleIncreaseCharge(stored)
                 }
 
                 if (data[i + 1].Message.split(" ")[0] === "Remaining:") {
                     document.getElementById("grid-manager-message").innerText = "Gird Status: Requesting supply from grid"
-                    document.getElementById("line4").style.animation = "gridLine 2s linear"
-                    await sleep(2000)
+                    document.getElementById("line4").style.animation = "gridLine  " + interval + "s linear"
+                    await sleep(interval * 1000);
                     document.getElementById("line4").style.animation = "0"
                     fromGrid += (Math.round((parseFloat((data[i + 1].Message.split(" ")[1])) + Number.EPSILON) * 100) / 100)
                     document.getElementById("grid-message").innerText = "Total From Grid: " + fromGrid + " KW/h";
@@ -172,13 +211,16 @@ export function Visualiser() {
                 houseList = [];
                 turbineList = [];
                 panelList = [];
-                turbineSupply = 0
-                solarSupply = 0
-                houseDemand = 0
+                
+                updateClock(hours)
             }
         }
         stopAnimation()
         document.getElementById("toggle-btn").disabled = false;
+        document.getElementById("turbines").disabled = false;
+        document.getElementById("duration").disabled = false;
+        document.getElementById("panels").disabled = false;
+        document.getElementById("houses").disabled = false;
     }
 
     return (
@@ -193,42 +235,66 @@ export function Visualiser() {
                     <div className={"visualiser-container"}>
                         <div className="card-body-visualiser battery-icon">
                             <Battery charge={charge}/>
-                            <div id={"capacity"} className={"message"}>Energy Stored: 0/2000 Mw</div>
-                            <div id="line1"></div>
+                            <div id={"capacity"} className={"message"}>Energy Stored: 0/2000 MW/h</div>
+                            <div id="line1"><EnergyMarker></EnergyMarker></div>
                         </div>
                         <div className="wind-turbine-animated turbine-icon">
                             <WindTurbine></WindTurbine>
-                            <div id={"turbine-message"} className={"message"}>Total Turbine Supply: 0 KW/h</div>
-                            <div id="line2"></div>
+                            <div className="dropdown">
+                                <div className="dropdown-content">
+                                    <div className="list-container">
+                                        <ul className="list" id={"turbine-list"}>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id={"turbine-message"} className={"message"}>Total Turbine Supply: 0 KW/h</div>
+                            </div>
+                            <div id="line2"><EnergyMarker></EnergyMarker></div>
                         </div>
                         <div className="card-body-visualiser solar-icon">
                             <Panel></Panel>
-                            <div id={"panel-message"} className={"message"}>Total Solar Supply: 0 KW/h</div>
-                            <div id="line3"></div>
+                            <div className="dropdown">
+                                <div className="dropdown-content">
+                                    <div className="list-container">
+                                        <ul className="list" id={"panel-list"}>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id={"panel-message"} className={"message"}>Total Solar Supply: 0 KW/h</div>
+                            </div>
+                            <div id="line3"><EnergyMarker></EnergyMarker></div>
                         </div>
                         <div className="card-body-visualiser">
                         </div>
                         <div className="grid-manager-icon">
                             <GridManager></GridManager>
-                            <div id="line4"></div>
+                            <div id="line4"><EnergyMarker></EnergyMarker></div>
                         </div>
                         <div className="card-body-visualiser">
                         </div>
                         <div className="grid-icon">
-                            <div id="line6"></div>
+                            <div id="line6"><EnergyMarker></EnergyMarker></div>
                             <div id={"grid-message"} className={"message"}>Total From Grid: 0 KW/h</div>
                             <Grid></Grid>
                         </div>
                         <div className="house-icon">
                             <div id="line6"></div>
-                            <div id={"grid-manager-message"} className={"message"}>Grid Status: </div>
+                            <div id={"grid-manager-message"} className={"message"}>Grid Status:</div>
                             <br/>
                             <br/>
                             <House></House>
                         </div>
                         <div className="house-icon">
-                            <div id="line5"></div>
-                            <div id={"house-message"} className={"message"}>Total House Demand: 0 KW/h</div>
+                            <div id="line5"><EnergyMarker></EnergyMarker></div>
+                            <div className="dropdown">
+                                <div className="dropdown-content">
+                                    <div className="list-container">
+                                        <ul className="list" id={"house-list"}>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id={"house-message"} className={"message"}>Total House Demand: 0 KW/h</div>
+                            </div>
                             <br/>
                             <br/>
                             <House></House>

@@ -206,6 +206,37 @@ export function Grid(){
     )
 }
 
+
+export function EnergyMarker(){
+    return(
+        <svg width="20" height="20" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="lightning 1" clip-path="url(#clip0_2_13)">
+                <g id="Lighting" filter="url(#filter0_d_2_13)">
+                    <path id="Vector" d="M341.156 24.7319L340.253 25.1334L436.843 375.751H187.5H186.48L187.104 376.557L495.757 775.307L496.626 774.842L388.195 451.751H612.5H613.412L612.921 450.982L341.156 24.7319ZM330.575 2.14006L330.372 1.68315L330.575 2.14003C333.861 0.679035 337.314 -0.0193481 340.723 -0.0193481C349.048 -0.0193481 357.108 4.14656 361.829 11.5507L633.594 437.802C638.505 445.504 638.827 455.27 634.435 463.28C630.043 471.289 621.635 476.268 612.5 476.268H422.98H422.284L422.506 476.927L519.869 767.041C523.753 778.613 518.717 791.3 507.954 797.059C504.218 799.058 500.172 800.019 496.166 800.019C488.632 800.019 481.249 796.616 476.37 790.313L167.718 391.563L167.324 391.868L167.718 391.563C161.876 384.017 160.836 373.802 165.04 365.233C169.243 356.665 177.955 351.234 187.5 351.234H404.003H404.66L404.485 350.602L316.617 31.6441L316.192 31.7612L316.617 31.6441C313.329 19.7102 319.264 7.1671 330.575 2.14006Z" fill="#A77D13" stroke="black"/>
+                </g>
+                <path id="Polygon 1" d="M337.5 16L614.5 453H455L337.5 16Z" fill="#EAB736"/>
+                <path id="Polygon 2" d="M363.5 374L500 781.5L184.5 374H363.5Z" fill="#EAB736"/>
+                <path id="Rectangle 1" d="M361.5 374H434.5L457 453H389L361.5 374Z" fill="#EAB736"/>
+            </g>
+            <defs>
+                <filter id="filter0_d_2_13" x="157.983" y="-0.519348" width="484.034" height="809.039" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                    <feOffset dy="4"/>
+                    <feGaussianBlur stdDeviation="2"/>
+                    <feComposite in2="hardAlpha" operator="out"/>
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_13"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_13" result="shape"/>
+                </filter>
+                <clipPath id="clip0_2_13">
+                    <rect width="800" height="800" fill="white"/>
+                </clipPath>
+            </defs>
+        </svg>
+    )
+}
+
 export function startAnimation() {
     document.getElementById("blades-1").style.animation = "turbine 2s infinite linear"
     document.getElementById("blades-2").style.animation = "turbine 2s infinite linear"
