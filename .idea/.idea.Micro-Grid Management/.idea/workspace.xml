@@ -5,9 +5,13 @@
     <projectFile profileName="Micro_Grid_Management">Micro-Grid Management/Micro-Grid Management.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Created form to input parameters for the simulation">
+    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Added animated dots to indicate communication of elements as well as a small status box for what actions the grid manager was performing">
+      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/images/lightning 1.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Visualiser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Visualiser.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/wind-turbine.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/wind-turbine.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Simulate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Simulate.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/micro-grid_sim_integration" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RESET_MODE" value="HARD" />
@@ -76,7 +80,14 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Micro-Grid Management: IIS Express">
+  <component name="RunDashboard">
+    <option name="excludedTypes">
+      <set>
+        <option value="HttpClient.HttpRequestRunConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected=".NET Launch Settings Profile.Micro-Grid Management: Micro_Grid_Management">
     <configuration name="All in generated-requests" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http">
       <method v="2" />
     </configuration>
@@ -116,6 +127,13 @@
         <option name="Build" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue=".NET Launch Settings Profile.Micro-Grid Management: IIS Express" />
+      <item itemvalue=".NET Launch Settings Profile.Micro-Grid Management: Micro_Grid_Management" />
+      <item itemvalue="HTTP Request.All in generated-requests" />
+      <item itemvalue="HTTP Request.generated-requests | #1" />
+      <item itemvalue="HTTP Request.generated-requests | #2" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="HTTP Request.generated-requests | #1" />
@@ -157,7 +175,39 @@
       <workItem from="1675807817888" duration="1238000" />
       <workItem from="1675940286207" duration="780000" />
       <workItem from="1675947771970" duration="7000" />
-      <workItem from="1676031655789" duration="614000" />
+      <workItem from="1676031655789" duration="2035000" />
+      <workItem from="1676235681977" duration="1467000" />
+      <workItem from="1676336694029" duration="2426000" />
+      <workItem from="1676388231842" duration="6916000" />
+      <workItem from="1676458939248" duration="1286000" />
+      <workItem from="1676491032215" duration="3634000" />
+      <workItem from="1676716750914" duration="12885000" />
+      <workItem from="1676820723792" duration="9761000" />
+      <workItem from="1676901291562" duration="11707000" />
+      <workItem from="1676987804588" duration="922000" />
+      <workItem from="1677014228008" duration="9076000" />
+      <workItem from="1677063599920" duration="871000" />
+      <workItem from="1677163769196" duration="1609000" />
+      <workItem from="1677179534501" duration="2740000" />
+      <workItem from="1677194271763" duration="1788000" />
+      <workItem from="1677331570006" duration="2260000" />
+      <workItem from="1677513225750" duration="8798000" />
+      <workItem from="1677589912254" duration="4286000" />
+      <workItem from="1677606277845" duration="10273000" />
+      <workItem from="1677623159106" duration="1966000" />
+      <workItem from="1677700767712" duration="2049000" />
+      <workItem from="1677706392390" duration="24000" />
+      <workItem from="1677777970947" duration="6917000" />
+      <workItem from="1677796706132" duration="4974000" />
+      <workItem from="1677805255522" duration="247000" />
+      <workItem from="1677845105064" duration="6389000" />
+      <workItem from="1677879202338" duration="2348000" />
+      <workItem from="1677884837083" duration="398000" />
+      <workItem from="1677938507014" duration="5704000" />
+      <workItem from="1678033013776" duration="3281000" />
+      <workItem from="1678053072196" duration="617000" />
+      <workItem from="1678054524415" duration="1399000" />
+      <workItem from="1678113427536" duration="4501000" />
     </task>
     <task id="LOCAL-00002" summary="Removed necessary class files">
       <created>1675216378406</created>
@@ -208,7 +258,119 @@
       <option name="project" value="LOCAL" />
       <updated>1675886975897</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Message to show api call was successful or not">
+      <created>1676039763996</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1676039763996</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Created base for sidebar">
+      <created>1676318550748</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1676318550748</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Got side bar working correctly">
+      <created>1676328077609</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1676328077609</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fixed formatting on settings tab">
+      <created>1676338459751</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1676338459752</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Added transitions to settings and visualiser">
+      <created>1676495256280</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1676495256280</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Setup minor formatting for settings and visualiser position">
+      <created>1676744579934</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1676744579934</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added svgs to represent each element of the grid">
+      <created>1676842678228</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1676842678228</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added clock timer">
+      <created>1676931263797</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1676931263797</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Modified clock timer, and began constructing a formatting function for ui elements of the visualiser">
+      <created>1677200368431</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1677200368431</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Supply and demand totals display on visualiser with the animations stopping upon its completion">
+      <created>1677522402446</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1677522402446</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Battery now responds to changes in charge/discharge and will empty when demand is still remaining">
+      <created>1677610946081</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1677610946081</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Battery capacity tracking added for visualisers as well as a redesigned clock element that ticks over an hour in time with the simulation">
+      <created>1677703194536</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1677703194536</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Grid usage is tracked in div">
+      <created>1677706409556</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1677706409556</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Fixed alignment of elements in visualiser">
+      <created>1677784840509</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1677784840509</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Added additional styling to sim start button">
+      <created>1677787241899</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1677787241899</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Added animated dots to indicate communication of elements as well as a small status box for what actions the grid manager was performing">
+      <created>1677882969390</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1677882969390</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,7 +383,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="feature/ui_design" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -236,7 +410,23 @@
     <MESSAGE value="Included Grid actions into list of messages and prevented the total taken from grid being printed twice" />
     <MESSAGE value="Convert run Sim method to Json content to later allow for passage with JS" />
     <MESSAGE value="Created form to input parameters for the simulation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created form to input parameters for the simulation" />
+    <MESSAGE value="Message to show api call was successful or not" />
+    <MESSAGE value="Created base for sidebar" />
+    <MESSAGE value="Got side bar working correctly" />
+    <MESSAGE value="fixed formatting on settings tab" />
+    <MESSAGE value="Added transitions to settings and visualiser" />
+    <MESSAGE value="Setup minor formatting for settings and visualiser position" />
+    <MESSAGE value="Added svgs to represent each element of the grid" />
+    <MESSAGE value="Added clock timer" />
+    <MESSAGE value="Modified clock timer, and began constructing a formatting function for ui elements of the visualiser" />
+    <MESSAGE value="Supply and demand totals display on visualiser with the animations stopping upon its completion" />
+    <MESSAGE value="Battery now responds to changes in charge/discharge and will empty when demand is still remaining" />
+    <MESSAGE value="Battery capacity tracking added for visualisers as well as a redesigned clock element that ticks over an hour in time with the simulation" />
+    <MESSAGE value="Grid usage is tracked in div" />
+    <MESSAGE value="Fixed alignment of elements in visualiser" />
+    <MESSAGE value="Added additional styling to sim start button" />
+    <MESSAGE value="Added animated dots to indicate communication of elements as well as a small status box for what actions the grid manager was performing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added animated dots to indicate communication of elements as well as a small status box for what actions the grid manager was performing" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
