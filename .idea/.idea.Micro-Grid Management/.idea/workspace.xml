@@ -5,13 +5,10 @@
     <projectFile profileName="Micro_Grid_Management">Micro-Grid Management/Micro-Grid Management.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Added animated dots to indicate communication of elements as well as a small status box for what actions the grid manager was performing">
-      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/images/lightning 1.svg" afterDir="false" />
+    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Replaced dots with lightning bolt to represent where energy is transferred, added hover over drop downs for showing individual power output of houses, solar panels etc and added a slider to adjust the speed of updates on the visualiser">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Visualiser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Visualiser.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/wind-turbine.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/wind-turbine.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Simulate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Simulate.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/History.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/History.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="feature/ui_design" />
       </map>
     </option>
     <option name="RESET_MODE" value="HARD" />
@@ -136,9 +133,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.generated-requests | #2" />
+        <item itemvalue="HTTP Request.generated-requests | #1" />
+        <item itemvalue="HTTP Request.All in generated-requests" />
         <item itemvalue="HTTP Request.generated-requests | #1" />
         <item itemvalue="HTTP Request.generated-requests | #2" />
-        <item itemvalue="HTTP Request.All in generated-requests" />
       </list>
     </recent_temporary>
   </component>
@@ -208,6 +207,7 @@
       <workItem from="1678053072196" duration="617000" />
       <workItem from="1678054524415" duration="1399000" />
       <workItem from="1678113427536" duration="4501000" />
+      <workItem from="1678221505623" duration="3894000" />
     </task>
     <task id="LOCAL-00002" summary="Removed necessary class files">
       <created>1675216378406</created>
@@ -389,7 +389,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="feature/ui_design" />
+                        <option value="develop" />
                       </list>
                     </value>
                   </entry>

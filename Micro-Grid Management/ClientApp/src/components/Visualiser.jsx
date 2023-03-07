@@ -34,7 +34,7 @@ export function Visualiser() {
             list.removeChild(list.firstChild);
         }
     }
-    
+
     const handleIncreaseCharge = (power) => {
         if (((power / 1000) / 2000) * 100 < 100) {
             setCharge((charge + (power / 1000)) / 2000 * 100);
@@ -53,7 +53,7 @@ export function Visualiser() {
         setCharge(0)
         charge = 0
         let power = 0;
-        document.getElementById("capacity").innerText = "Energy Stored: " + power / 1000 + "/2000 MW/h"
+        document.getElementById("capacity").innerText = "Energy Stored: 0/2000 MW/h"
     };
 
     function getSimData() {
@@ -116,111 +116,129 @@ export function Visualiser() {
 
         for (let i = 0; i < data.length; i++) {
 
-            if (data[i].Sender.includes("houseAgent") || data[i].Sender.includes("solarPanel") || data[i].Sender.includes("turbine")) {
-                if (data[i].Sender.includes("houseAgent")) {
-                    houseList.push(data[i])
+            if (document.getElementById("houses") != null) {
+
+                if (data[i].Sender.includes("houseAgent") || data[i].Sender.includes("solarPanel") || data[i].Sender.includes("turbine")) {
+                    if (data[i].Sender.includes("houseAgent")) {
+                        houseList.push(data[i])
+                    }
+
+                    if (data[i].Sender.includes("solarPanel")) {
+                        panelList.push(data[i])
+                    }
+
+                    if (data[i].Sender.includes("turbine")) {
+                        turbineList.push(data[i])
+                    }
+                    count++;
                 }
 
-                if (data[i].Sender.includes("solarPanel")) {
-                    panelList.push(data[i])
+                if (count === totalAgents) {
+                    hours++
+                    interval = parseFloat(document.getElementById("seconds").innerText)
+                    count = 0
+                    let houseDemand = 0;
+                    let turbineSupply = 0;
+                    let solarSupply = 0;
+                    hourCount++;
+
+                    clearList("house-list")
+                    for (let h = 0; h < houseList.length; h++) {
+                        houseDemand += parseFloat(houseList[h].Message)
+                        addItemToList((houseList[h].Sender + " : " + houseList[h].Message + " KW/h\n"), "house-list")
+                        if (h === houseList.length - 1) {
+                            interval = parseFloat(document.getElementById("seconds").innerText)
+                            document.getElementById("line5").style.animation = "houseLine " + interval + "s linear"
+                            await sleep(interval * 1000);
+                            document.getElementById("line5").style.animation = ""
+                            document.getElementById('house-message').innerText = ("Total Demand: " + Math.round(houseDemand) + " KW/h\n");
+                        }
+                    }
+
+                    clearList("turbine-list")
+                    for (let t = 0; t < turbineList.length; t++) {
+                        turbineSupply += parseFloat(turbineList[t].Message)
+                        addItemToList((turbineList[t].Sender + " : " + turbineList[t].Message + " KW/h\n"), "turbine-list")
+                        if (t === turbineList.length - 1) {
+                            interval = parseFloat(document.getElementById("seconds").innerText)
+                            document.getElementById("line2").style.animation = "turbineLine  " + interval + "s linear"
+                            await sleep(interval * 1000);
+                            document.getElementById("line2").style.animation = ""
+                            document.getElementById('turbine-message').innerText = ("Total Turbine Supply: " + Math.round(turbineSupply) + " KW/h\n");
+                        }
+                    }
+
+                    clearList("panel-list")
+                    for (let p = 0; p < panelList.length; p++) {
+                        solarSupply += parseFloat(panelList[p].Message)
+                        addItemToList((panelList[p].Sender + " : " + panelList[p].Message + " KW/h\n"), "panel-list")
+                        if (p === panelList.length - 1) {
+                            interval = parseFloat(document.getElementById("seconds").innerText)
+                            document.getElementById("line3").style.animation = "solarLine  " + interval + "s linear"
+                            await sleep(interval * 1000);
+                            document.getElementById("line3").style.animation = ""
+                            document.getElementById('panel-message').innerText = ("Total Solar Supply: " + Math.round(solarSupply) + " KW/h\n");
+                        }
+                    }
+
+                    interval = parseFloat(document.getElementById("seconds").innerText)
+                    if (data[i + 1].Message.split(" ")[0] === "Removed:") {
+                        document.getElementById("grid-manager-message").innerText = "Gird Status: Requesting supply from battery"
+                        document.getElementById("line1").style.animation = "batteryOutLine  " + interval + "s linear"
+                        await sleep(interval * 1000);
+                        document.getElementById("line1").style.animation = ""
+                        stored -= Math.round((parseFloat((data[i + 1].Message.split(" ")[1])) + Number.EPSILON) * 100) / 100
+                        handleDecreaseCharge(stored)
+                    }
+
+                    if (data[i + 1].Message.split(" ")[0] === "Stored:") {
+                        document.getElementById("grid-manager-message").innerText = "Gird Status: Storing excess energy"
+                        document.getElementById("line1").style.animation = "batteryInLine  " + interval + "s linear"
+                        stored = Math.round((parseFloat((data[i + 1].Message.split(" ")[1])) + Number.EPSILON) * 100) / 100
+                        await sleep(interval * 1000);
+                        document.getElementById("line1").style.animation = ""
+                        handleIncreaseCharge(stored)
+                    }
+
+                    if (data[i + 1].Message.split(" ")[0] === "Remaining:") {
+                        document.getElementById("grid-manager-message").innerText = "Gird Status: Requesting supply from grid"
+                        document.getElementById("line4").style.animation = "gridLine  " + interval + "s linear"
+                        await sleep(interval * 1000);
+                        document.getElementById("line4").style.animation = "0"
+                        fromGrid += (Math.round((parseFloat((data[i + 1].Message.split(" ")[1])) + Number.EPSILON) * 100) / 100)
+                        document.getElementById("grid-message").innerText = "Total From Grid: " + fromGrid + " KW/h";
+                        handleEmpty()
+                    }
+
+                    houseList = [];
+                    turbineList = [];
+                    panelList = [];
+
+                    updateClock(hours)
                 }
-
-                if (data[i].Sender.includes("turbine")) {
-                    turbineList.push(data[i])
-                }
-                count++;
-            }
-
-            if (count === totalAgents) {
-                hours++
-                interval = parseFloat(document.getElementById("seconds").innerText)
-                count = 0
-                let houseDemand = 0;
-                let turbineSupply = 0;
-                let solarSupply = 0;
-                hourCount++;
-
+            } else {
+                document.getElementById("clock").innerText = "00:00"
                 clearList("house-list")
-                for (let h = 0; h < houseList.length; h++) {
-                    houseDemand += parseFloat(houseList[h].Message)
-                    addItemToList((houseList[h].Sender + " : " + houseList[h].Message + " KW/h\n"), "house-list")
-                    if (h === houseList.length - 1) {
-                        interval = parseFloat(document.getElementById("seconds").innerText)
-                        document.getElementById("line5").style.animation = "houseLine " + interval + "s linear"
-                        await sleep(interval * 1000);
-                        document.getElementById("line5").style.animation = ""
-                        document.getElementById('house-message').innerText = ("Total Demand: " + Math.round(houseDemand) + " KW/h\n");
-                    }
-                }
-                
                 clearList("turbine-list")
-                for (let t = 0; t < turbineList.length; t++) {
-                    turbineSupply += parseFloat(turbineList[t].Message)
-                    addItemToList((turbineList[t].Sender + " : " + turbineList[t].Message + " KW/h\n"), "turbine-list")
-                    if (t === turbineList.length - 1) {
-                        interval = parseFloat(document.getElementById("seconds").innerText)
-                        document.getElementById("line2").style.animation = "turbineLine  " + interval + "s linear"
-                        await sleep(interval * 1000);
-                        document.getElementById("line2").style.animation = ""
-                        document.getElementById('turbine-message').innerText = ("Total Turbine Supply: " + Math.round(turbineSupply) + " KW/h\n");
-                    }
-                }
-
                 clearList("panel-list")
-                for (let p = 0; p < panelList.length; p++) {
-                    solarSupply += parseFloat(panelList[p].Message)
-                    addItemToList((panelList[p].Sender + " : " + panelList[p].Message + " KW/h\n"), "panel-list")
-                    if (p === panelList.length - 1) {
-                        interval = parseFloat(document.getElementById("seconds").innerText)
-                        document.getElementById("line3").style.animation = "solarLine  " + interval + "s linear"
-                        await sleep(interval * 1000);
-                        document.getElementById("line3").style.animation = ""
-                        document.getElementById('panel-message').innerText = ("Total Solar Supply: " + Math.round(solarSupply) + " KW/h\n");
-                    }
-                }
-
-                interval = parseFloat(document.getElementById("seconds").innerText)
-                if (data[i + 1].Message.split(" ")[0] === "Removed:") {
-                    document.getElementById("grid-manager-message").innerText = "Gird Status: Requesting supply from battery"
-                    document.getElementById("line1").style.animation = "batteryOutLine  " + interval + "s linear"
-                    await sleep(interval * 1000);
-                    document.getElementById("line1").style.animation = ""
-                    stored -= Math.round((parseFloat((data[i + 1].Message.split(" ")[1])) + Number.EPSILON) * 100) / 100
-                    handleDecreaseCharge(stored)
-                }
-
-                if (data[i + 1].Message.split(" ")[0] === "Stored:") {
-                    document.getElementById("grid-manager-message").innerText = "Gird Status: Storing excess energy"
-                    document.getElementById("line1").style.animation = "batteryInLine  " + interval + "s linear"
-                    stored = Math.round((parseFloat((data[i + 1].Message.split(" ")[1])) + Number.EPSILON) * 100) / 100
-                    await sleep(interval * 1000);
-                    document.getElementById("line1").style.animation = ""
-                    handleIncreaseCharge(stored)
-                }
-
-                if (data[i + 1].Message.split(" ")[0] === "Remaining:") {
-                    document.getElementById("grid-manager-message").innerText = "Gird Status: Requesting supply from grid"
-                    document.getElementById("line4").style.animation = "gridLine  " + interval + "s linear"
-                    await sleep(interval * 1000);
-                    document.getElementById("line4").style.animation = "0"
-                    fromGrid += (Math.round((parseFloat((data[i + 1].Message.split(" ")[1])) + Number.EPSILON) * 100) / 100)
-                    document.getElementById("grid-message").innerText = "Total From Grid: " + fromGrid + " KW/h";
-                    handleEmpty()
-                }
-
-                houseList = [];
-                turbineList = [];
-                panelList = [];
-                
-                updateClock(hours)
+                document.getElementById("grid-message").innerText = "Total From Grid: 0KW/h";
+                document.getElementById('panel-message').innerText = ("Total Solar Supply: 0KW/h\n");
+                document.getElementById('turbine-message').innerText = ("Total Turbine Supply: 0KW/h\n");
+                document.getElementById('house-message').innerText = ("Total Demand: 0KW/h\n");
+                document.getElementById("grid-manager-message").innerText = "Gird Status: ";
+                handleEmpty()
+                break;
             }
         }
-        stopAnimation()
-        document.getElementById("toggle-btn").disabled = false;
-        document.getElementById("turbines").disabled = false;
-        document.getElementById("duration").disabled = false;
-        document.getElementById("panels").disabled = false;
-        document.getElementById("houses").disabled = false;
+
+        if(document.getElementById("houses") != null) {
+            stopAnimation()
+            document.getElementById("toggle-btn").disabled = false;
+            document.getElementById("turbines").disabled = false;
+            document.getElementById("duration").disabled = false;
+            document.getElementById("panels").disabled = false;
+            document.getElementById("houses").disabled = false;
+        }
     }
 
     return (
