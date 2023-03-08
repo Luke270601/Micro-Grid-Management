@@ -62,15 +62,18 @@ export function Visualiser() {
         document.getElementById("duration").disabled = true;
         document.getElementById("panels").disabled = true;
         document.getElementById("houses").disabled = true;
+        document.getElementById("month").disabled = true;
         handleEmpty()
         let duration = document.getElementById("duration").value
         let turbineCount = document.getElementById("turbines").value
         let panelCount = document.getElementById("panels").value
         let houseCount = document.getElementById("houses").value
+        let monthOfYear = document.getElementById("month").value.substring(0,3)
+        console.log(monthOfYear)
         interval = parseFloat(document.getElementById("seconds").innerText)
 
         if (duration < 2 && turbineCount != null && panelCount != null && houseCount > 0 && interval > 0) {
-            $.getJSON("https://localhost:44314/api/Simulation?duration=" + duration + "&turbineCount=" + turbineCount + "&panelCount=" + panelCount + "&houseCount=" + houseCount, function () {
+            $.getJSON("https://localhost:44314/api/Simulation?duration=" + duration + "&turbineCount=" + turbineCount + "&panelCount=" + panelCount + "&houseCount=" + houseCount + "&monthOfTheYear=" + monthOfYear, function () {
 
             })
                 .done(function (data) {
@@ -84,6 +87,7 @@ export function Visualiser() {
                     document.getElementById("duration").disabled = false;
                     document.getElementById("panels").disabled = false;
                     document.getElementById("houses").disabled = false;
+                    document.getElementById("month").disabled = false;
                 });
         } else {
             alert("All fields must be filled (Duration must be 1 and house count exceed 0)")
@@ -92,6 +96,7 @@ export function Visualiser() {
             document.getElementById("duration").disabled = false;
             document.getElementById("panels").disabled = false;
             document.getElementById("houses").disabled = false;
+            document.getElementById("month").disabled = false;
         }
 
     }
@@ -238,6 +243,7 @@ export function Visualiser() {
             document.getElementById("duration").disabled = false;
             document.getElementById("panels").disabled = false;
             document.getElementById("houses").disabled = false;
+            document.getElementById("month").disabled = false;
         }
     }
 

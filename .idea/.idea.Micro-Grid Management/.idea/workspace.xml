@@ -5,10 +5,9 @@
     <projectFile profileName="Micro_Grid_Management">Micro-Grid Management/Micro-Grid Management.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Replaced dots with lightning bolt to represent where energy is transferred, added hover over drop downs for showing individual power output of houses, solar panels etc and added a slider to adjust the speed of updates on the visualiser">
+    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Fixed expected issue when using component on history tab">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Visualiser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Visualiser.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/History.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/History.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +206,9 @@
       <workItem from="1678053072196" duration="617000" />
       <workItem from="1678054524415" duration="1399000" />
       <workItem from="1678113427536" duration="4501000" />
-      <workItem from="1678221505623" duration="3894000" />
+      <workItem from="1678221505623" duration="4655000" />
+      <workItem from="1678273085645" duration="617000" />
+      <workItem from="1678306970431" duration="1188000" />
     </task>
     <task id="LOCAL-00002" summary="Removed necessary class files">
       <created>1675216378406</created>
@@ -370,7 +371,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677882969390</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Fixed expected issue when using component on history tab">
+      <created>1678227783460</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1678227783460</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,7 +434,8 @@
     <MESSAGE value="Fixed alignment of elements in visualiser" />
     <MESSAGE value="Added additional styling to sim start button" />
     <MESSAGE value="Added animated dots to indicate communication of elements as well as a small status box for what actions the grid manager was performing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added animated dots to indicate communication of elements as well as a small status box for what actions the grid manager was performing" />
+    <MESSAGE value="Fixed expected issue when using component on history tab" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed expected issue when using component on history tab" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
