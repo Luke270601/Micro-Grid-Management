@@ -5,7 +5,7 @@
     <projectFile profileName="Micro_Grid_Management">Micro-Grid Management/Micro-Grid Management.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Use the selected month to determine the month the weather data was recorded">
+    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Have select list populate with array items">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/History.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/History.jsx" afterDir="false" />
     </list>
@@ -213,7 +213,7 @@
       <workItem from="1678385210225" duration="1826000" />
       <workItem from="1678467520765" duration="3259000" />
       <workItem from="1678553799617" duration="3120000" />
-      <workItem from="1678637379922" duration="4866000" />
+      <workItem from="1678637379922" duration="8533000" />
     </task>
     <task id="LOCAL-00002" summary="Removed necessary class files">
       <created>1675216378406</created>
@@ -390,7 +390,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678308287249</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Have select list populate with array items">
+      <created>1678654697301</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1678654697301</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,7 +429,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removed redundant class files" />
     <MESSAGE value="Removed necessary class files" />
     <MESSAGE value="Removed further unnecessary files and setup a navbar with distinct pages" />
     <MESSAGE value="Added printed messages from microgrid sim to list" />
@@ -447,7 +453,8 @@
     <MESSAGE value="Added animated dots to indicate communication of elements as well as a small status box for what actions the grid manager was performing" />
     <MESSAGE value="Fixed expected issue when using component on history tab" />
     <MESSAGE value="Use the selected month to determine the month the weather data was recorded" />
-    <option name="LAST_COMMIT_MESSAGE" value="Use the selected month to determine the month the weather data was recorded" />
+    <MESSAGE value="Have select list populate with array items" />
+    <option name="LAST_COMMIT_MESSAGE" value="Have select list populate with array items" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

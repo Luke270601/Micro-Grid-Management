@@ -1,39 +1,46 @@
 import {TabPanel} from "../components/SideBar";
 import {Visualiser} from "../components/Visualiser";
 import React from "react";
+import $ from "jquery";
 
 export function History() {
 
     let interval = 0;
-    let array = populateArray()
-    
+    populateArray();
     function updateSlider() {
         interval = document.getElementById("slider").value / 10
         document.getElementById("seconds").innerText = interval
     }
+
+    function removeOptions(selectElement) {
+        var i, L = selectElement.options.length - 1;
+        for(i = L; i >= 0; i--) {
+            selectElement.remove(i);
+        }
+    }
+    
     
     function populateArray(){
-        let list = [""]
-        for(let i = 0; i<10; i++){
-            list[i] = "Sim " + i
-        }
-        return list
+        $.getJSON("https://localhost:44314/api/GetSimData/GetNames", function () {
+
+        })
+            .done(function (data) {
+                createList(data)
+            })
+            .fail(function () {
+                console.log("Error")
+            });
     }
 
-    function createList() {
-//Create array of options to be added
-
-        if (array !== []) {
-//Create and append the options
+    function createList(array) {
+        removeOptions(document.getElementById('simData'));
+        //Create and append the options
             for (let i = 0; i < array.length; i++) {
                 let option = document.createElement("option");
                 option.value = array[i];
                 option.text = array[i];
                 document.getElementById("simData").appendChild(option);
             }
-        }
-        
-        array = [];
     }
 
 
@@ -48,7 +55,7 @@ export function History() {
                             <div className="form-group">
                                 <div className="form-group">
                                     <label htmlFor="simSelect">Simulation Select</label>
-                                    <select className="form-control" id="simData" onClick={createList}>
+                                    <select className="form-control" id="simData">
                                     </select>
                                 </div>
                                 <label htmlFor="duration">Interval of action (seconds)</label><br/>
