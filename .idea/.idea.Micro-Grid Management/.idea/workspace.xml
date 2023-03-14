@@ -5,8 +5,7 @@
     <projectFile profileName="Micro_Grid_Management">Micro-Grid Management/Micro-Grid Management.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Populate simselect with api call, a bug causes the function to be called three times, likely an issue with react (countered by clearing the list before filling it)">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Set up api to return a list of recorded simulations">
       <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/History.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/History.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -216,7 +215,7 @@
       <workItem from="1678637379922" duration="10620000" />
       <workItem from="1678716397945" duration="1797000" />
       <workItem from="1678810405533" duration="386000" />
-      <workItem from="1678830798002" duration="732000" />
+      <workItem from="1678830798002" duration="1380000" />
     </task>
     <task id="LOCAL-00002" summary="Removed necessary class files">
       <created>1675216378406</created>
@@ -407,7 +406,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678668474826</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Set up api to return a list of recorded simulations">
+      <created>1678832107620</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1678832107620</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,7 +445,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removed further unnecessary files and setup a navbar with distinct pages" />
     <MESSAGE value="Added printed messages from microgrid sim to list" />
     <MESSAGE value="Included Grid actions into list of messages and prevented the total taken from grid being printed twice" />
     <MESSAGE value="Convert run Sim method to Json content to later allow for passage with JS" />
@@ -464,7 +469,8 @@
     <MESSAGE value="Use the selected month to determine the month the weather data was recorded" />
     <MESSAGE value="Have select list populate with array items" />
     <MESSAGE value="Populate simselect with api call, a bug causes the function to be called three times, likely an issue with react (countered by clearing the list before filling it)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Populate simselect with api call, a bug causes the function to be called three times, likely an issue with react (countered by clearing the list before filling it)" />
+    <MESSAGE value="Set up api to return a list of recorded simulations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set up api to return a list of recorded simulations" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
