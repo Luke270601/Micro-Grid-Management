@@ -6,7 +6,7 @@ import $ from "jquery";
 export function History() {
 
     let interval = 0;
-    populateArray();
+    populateArray()
     function updateSlider() {
         interval = document.getElementById("slider").value / 10
         document.getElementById("seconds").innerText = interval
@@ -37,8 +37,8 @@ export function History() {
         //Create and append the options
             for (let i = 0; i < array.length; i++) {
                 let option = document.createElement("option");
-                option.value = array[i];
-                option.text = array[i];
+                option.value = array[i].simId;
+                option.text = "Simulation ID: " + array[i].simId;
                 document.getElementById("simData").appendChild(option);
             }
     }
@@ -57,6 +57,22 @@ export function History() {
                                     <label htmlFor="simSelect">Simulation Select</label>
                                     <select className="form-control" id="simData">
                                     </select>
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="turbines">Number of Turbines</label>
+                                    <text className="form-control" id="turbines"> </text>
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="panels">Number of Panels</label>
+                                    <text className="form-control" id="panels"> </text>
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="houses">Number of Houses</label>
+                                    <text className="form-control" id="houses"> </text>
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="Date">Date Recorded</label>
+                                    <text className="form-control" id="duration"> </text>
                                 </div>
                                 <label htmlFor="duration">Interval of action (seconds)</label><br/>
                                 <input id={"slider"} type="range" min="1" max="50" onChange={updateSlider}
