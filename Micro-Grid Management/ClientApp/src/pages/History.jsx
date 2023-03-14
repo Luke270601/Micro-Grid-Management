@@ -44,6 +44,14 @@ export function History() {
                 console.log("Error")
             });
     }
+    
+    function populateInformation(){
+        let option = document.getElementById("simData").value
+        let turbineCount = document.getElementById("turbines").innerText = array[option].turbineCount 
+        let panelCount = document.getElementById("panels").innerText = array[option].panelCount
+        let houseCount = document.getElementById("houses").innerText = array[option].houseCount
+        let date = document.getElementById("date").innerText = array[option].date
+    }
 
     function createList(list) {
         array = list
@@ -51,18 +59,19 @@ export function History() {
         //Create and append the options
         for (let i = 0; i < list.length; i++) {
             let option = document.createElement("option");
-            option.value = list[i].simId;
+            option.value = [i];
             option.text = "Simulation ID: " + list[i].simId;
             document.getElementById("simData").appendChild(option);
         }
 
+        let option = document.getElementById("simData").value
+        let turbineCount = document.getElementById("turbines").innerText = array[option].turbineCount
+        let panelCount = document.getElementById("panels").innerText = array[option].panelCount
+        let houseCount = document.getElementById("houses").innerText = array[option].houseCount
+        let date = document.getElementById("date").innerText = array[option].date
+        
         return array
     }
-    
-    function log(){
-        console.log(array)
-    }
-
 
     return (
         <div id={"simulate"}>
@@ -75,7 +84,7 @@ export function History() {
                             <div className="form-group">
                                 <div className="form-group">
                                     <label htmlFor="simSelect">Simulation Select</label>
-                                    <select className="form-control" id="simData" onChange={log}>
+                                    <select className="form-control" id="simData" onClick={populateInformation}>
                                     </select>
                                 </div>
                                 <div className="form-group">
@@ -92,7 +101,7 @@ export function History() {
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="Date">Date Recorded</label>
-                                    <text className="form-control" id="duration"></text>
+                                    <text className="form-control" id="date"></text>
                                 </div>
                                 <label htmlFor="duration">Interval of action (seconds)</label><br/>
                                 <input id={"slider"} type="range" min="1" max="50" onChange={updateSlider}
