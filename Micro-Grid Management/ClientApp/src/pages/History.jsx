@@ -6,18 +6,19 @@ import $ from "jquery";
 export function History() {
 
     let interval = 0;
-    let array = populateArray()
+    let array = [];
+    populateArray();
 
+    function removeOptions(selectElement) {
+        let i, L = selectElement.options.length - 1;
+        for(i = L; i >= 0; i--) {
+            selectElement.remove(i);
+        }
+    }
+    
     function updateSlider() {
         interval = document.getElementById("slider").value / 10
         document.getElementById("seconds").innerText = interval
-    }
-
-    function removeOptions(selectElement) {
-        var i, L = selectElement.options.length - 1;
-        for (i = L; i >= 0; i--) {
-            selectElement.remove(i);
-        }
     }
 
 
@@ -47,15 +48,15 @@ export function History() {
     
     function populateInformation(){
         let option = document.getElementById("simData").value
-        let turbineCount = document.getElementById("turbines").innerText = array[option].turbineCount 
-        let panelCount = document.getElementById("panels").innerText = array[option].panelCount
-        let houseCount = document.getElementById("houses").innerText = array[option].houseCount
-        let date = document.getElementById("date").innerText = array[option].date
+        document.getElementById("turbines").innerText = array[option].turbineCount 
+        document.getElementById("panels").innerText = array[option].panelCount
+        document.getElementById("houses").innerText = array[option].houseCount
+        document.getElementById("date").innerText = array[option].date
     }
 
     function createList(list) {
         array = list
-        removeOptions(document.getElementById('simData'));
+        removeOptions(document.getElementById("simData"))
         //Create and append the options
         for (let i = 0; i < list.length; i++) {
             let option = document.createElement("option");
@@ -65,10 +66,10 @@ export function History() {
         }
 
         let option = document.getElementById("simData").value
-        let turbineCount = document.getElementById("turbines").innerText = array[option].turbineCount
-        let panelCount = document.getElementById("panels").innerText = array[option].panelCount
-        let houseCount = document.getElementById("houses").innerText = array[option].houseCount
-        let date = document.getElementById("date").innerText = array[option].date
+        document.getElementById("turbines").innerText = array[option].turbineCount
+        document.getElementById("panels").innerText = array[option].panelCount
+        document.getElementById("houses").innerText = array[option].houseCount
+        document.getElementById("date").innerText = array[option].date
         
         return array
     }
@@ -111,7 +112,7 @@ export function History() {
                         </form>
                     </div>
                 </div>
-                <Visualiser></Visualiser>
+                    <Visualiser></Visualiser>
             </div>
         </div>
     );
