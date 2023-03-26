@@ -5,11 +5,11 @@
     <projectFile profileName="Micro_Grid_Management">Micro-Grid Management/Micro-Grid Management.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Selected item now fills out related text boxes to show the setup of the previous simulation">
+    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Fixed error where visualiser would continue to run after switching tabs">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Clock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Clock.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Visualiser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Visualiser.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/History.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/History.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Simulate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Simulate.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +220,9 @@
       <workItem from="1678810405533" duration="386000" />
       <workItem from="1678830798002" duration="7087000" />
       <workItem from="1678838572437" duration="169000" />
-      <workItem from="1678839150396" duration="1979000" />
+      <workItem from="1678839150396" duration="6052000" />
+      <workItem from="1678850432503" duration="1147000" />
+      <workItem from="1678877852005" duration="1093000" />
     </task>
     <task id="LOCAL-00002" summary="Removed necessary class files">
       <created>1675216378406</created>
@@ -432,7 +434,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678837139742</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Fixed error where visualiser would continue to run after switching tabs">
+      <created>1678841277463</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1678841277463</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,7 +473,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Convert run Sim method to Json content to later allow for passage with JS" />
     <MESSAGE value="Created form to input parameters for the simulation" />
     <MESSAGE value="Message to show api call was successful or not" />
     <MESSAGE value="Created base for sidebar" />
@@ -489,7 +497,8 @@
     <MESSAGE value="Set up api to return a list of recorded simulations" />
     <MESSAGE value="Select list returns and populates the correct data" />
     <MESSAGE value="Selected item now fills out related text boxes to show the setup of the previous simulation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Selected item now fills out related text boxes to show the setup of the previous simulation" />
+    <MESSAGE value="Fixed error where visualiser would continue to run after switching tabs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed error where visualiser would continue to run after switching tabs" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

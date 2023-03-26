@@ -33,21 +33,9 @@ export function History() {
                 console.log("Error")
             });
     }
-
-    function getData(id) {
-        $.getJSON("https://localhost:44314/api/GetSimData/GetNames/" + id, function () {
-
-        })
-            .done(function (data) {
-                createList(data)
-            })
-            .fail(function () {
-                console.log("Error")
-            });
-    }
     
     function populateInformation(){
-        let option = document.getElementById("simData").value
+        let option = document.getElementById("simData").selectedIndex
         document.getElementById("turbines").innerText = array[option].turbineCount 
         document.getElementById("panels").innerText = array[option].panelCount
         document.getElementById("houses").innerText = array[option].houseCount
@@ -60,7 +48,7 @@ export function History() {
         //Create and append the options
         for (let i = 0; i < list.length; i++) {
             let option = document.createElement("option");
-            option.value = [i];
+            option.value = list[i].simId;
             option.text = "Simulation ID: " + list[i].simId;
             document.getElementById("simData").appendChild(option);
         }

@@ -78,7 +78,7 @@ export function Visualiser() {
                 })
                     .done(function (data) {
                         alert("Beginning Simulation")
-                        runSim(data, turbineCount, panelCount, houseCount)
+                        runSim(data, turbineCount, panelCount, houseCount, false)
                     })
                     .fail(function () {
                         alert("Web api not currently active, please try again later.")
@@ -100,7 +100,23 @@ export function Visualiser() {
             }
         }
         catch (error){
-           
+            handleEmpty()
+            let turbineCount = parseInt(document.getElementById("turbines").innerText)
+            let panelCount = parseInt(document.getElementById("panels").innerText)
+            let houseCount = parseInt(document.getElementById("houses").innerText)
+            let id = document.getElementById("simData").value
+
+                $.getJSON("https://localhost:44314/api/GetSimData/GetData/" + id, function () {
+
+                })
+                    .done(function (data) {
+                        alert("Data received starting simulation")
+                        runSim(data, turbineCount, panelCount, houseCount, true)
+                    })
+                    .fail(function () {
+                        alert("Web api not active please try again later")
+                    });
+
         }
 
     }
@@ -110,13 +126,12 @@ export function Visualiser() {
     }
 
 
-    async function runSim(json, turbineCount, panelCount, houseCount) {
+    async function runSim(json, turbineCount, panelCount, houseCount, previousSim) {
         let hours = 0;
 
         startAnimation()
 
         let count = 0
-        let hourCount = 0;
         let totalAgents = parseInt(turbineCount) + parseInt(panelCount) + parseInt(houseCount)
         let houseList = [];
         let turbineList = [];
@@ -125,7 +140,7 @@ export function Visualiser() {
 
         for (let i = 0; i < data.length; i++) {
 
-            if (document.getElementById("houses").disabled) {
+            if (document.getElementById("houses").disabled || previousSim) {
 
                 if (data[i].Sender.includes("houseAgent") || data[i].Sender.includes("solarPanel") || data[i].Sender.includes("turbine")) {
                     if (data[i].Sender.includes("houseAgent")) {
@@ -143,13 +158,11 @@ export function Visualiser() {
                 }
 
                 if (count === totalAgents) {
-                    hours++
                     interval = parseFloat(document.getElementById("seconds").innerText)
                     count = 0
                     let houseDemand = 0;
                     let turbineSupply = 0;
                     let solarSupply = 0;
-                    hourCount++;
 
                     clearList("house-list")
                     for (let h = 0; h < houseList.length; h++) {
@@ -222,7 +235,7 @@ export function Visualiser() {
                     houseList = [];
                     turbineList = [];
                     panelList = [];
-
+                    hours++
                     updateClock(hours)
                 }
             } else {
@@ -248,6 +261,14 @@ export function Visualiser() {
             document.getElementById("panels").disabled = false;
             document.getElementById("houses").disabled = false;
             document.getElementById("month").disabled = false;
+        }
+        
+        if(previousSim){
+            document.getElementById("toggle-btn").disabled = false;
+            document.getElementById("turbines").disabled = false;
+            document.getElementById("panels").disabled = false;
+            document.getElementById("houses").disabled = false;
+            stopAnimation()
         }
     }
 

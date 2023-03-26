@@ -10,7 +10,6 @@ export function Clock() {
 
 export function updateClock(hours) {
     
-    hours++;
 
     if (hours > 23) {
         hours = 0
