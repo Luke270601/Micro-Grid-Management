@@ -92,6 +92,10 @@ export function History() {
                                     <label htmlFor="Date">Date Recorded</label>
                                     <text className="form-control" id="date"></text>
                                 </div>
+                                <div className="form-group">
+                                    <label htmlFor="duration">Duration</label>
+                                    <text className="form-control" id="duration"></text>
+                                </div>
                                 <label htmlFor="duration">Interval of action (seconds)</label><br/>
                                 <input id={"slider"} type="range" min="1" max="50" onChange={updateSlider}
                                        onLoad={updateSlider}/>

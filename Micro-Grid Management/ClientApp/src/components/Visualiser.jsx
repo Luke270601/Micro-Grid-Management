@@ -19,6 +19,7 @@ export function Visualiser() {
     let fromGrid = 0;
     let stored = 0;
     let interval = 0;
+    let days = 0;
 
     function addItemToList(itemText, listName) {
         const list = document.getElementById(listName);
@@ -66,13 +67,15 @@ export function Visualiser() {
             document.getElementById("month").disabled = true;
             handleEmpty()
             let duration = document.getElementById("duration").value
+            days = duration
             let turbineCount = document.getElementById("turbines").value
             let panelCount = document.getElementById("panels").value
             let houseCount = document.getElementById("houses").value
             let monthOfYear = document.getElementById("month").value.substring(0, 3)
             interval = parseFloat(document.getElementById("seconds").innerText)
+            document.getElementById("days-remaining").innerText = "Days Remaining: " + duration
 
-            if (duration < 2 && turbineCount != null && panelCount != null && houseCount > 0 && interval > 0) {
+            if (turbineCount != null && panelCount != null && houseCount > 0 && interval > 0) {
                 $.getJSON("https://localhost:44314/api/Simulation?duration=" + duration + "&turbineCount=" + turbineCount + "&panelCount=" + panelCount + "&houseCount=" + houseCount + "&monthOfTheYear=" + monthOfYear, function () {
 
                 })
@@ -90,7 +93,7 @@ export function Visualiser() {
                         document.getElementById("month").disabled = false;
                     });
             } else {
-                alert("All fields must be filled (Duration must be 1 and house count exceed 0)")
+                alert("All fields must be filled (house count exceed 0)")
                 document.getElementById("toggle-btn").disabled = false;
                 document.getElementById("turbines").disabled = false;
                 document.getElementById("duration").disabled = false;
@@ -236,7 +239,17 @@ export function Visualiser() {
                     turbineList = [];
                     panelList = [];
                     hours++
-                    updateClock(hours)
+                    
+                    if(hours > 23) {
+                        updateClock(hours)
+                        days--;
+                        document.getElementById("days-remaining").innerText = "Days Remaining: " + days
+                        hours = 0;
+                    }
+                    
+                    else {
+                        updateClock(hours)
+                    }
                 }
             } else {
                 document.getElementById("clock").innerText = "00:00"
@@ -279,6 +292,7 @@ export function Visualiser() {
                     <div className={"visualiser-header"}>
                         <h3 className="card-header ">Visualiser
                         </h3>
+                        <h4 className="card-header " id={"days-remaining"}>Days Remaining:</h4>
                         <Clock></Clock>
                     </div>
                     <div className={"visualiser-container"}>
