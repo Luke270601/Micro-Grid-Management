@@ -105,17 +105,24 @@ export function Visualiser() {
             let panelCount = parseInt(document.getElementById("panels").innerText)
             let houseCount = parseInt(document.getElementById("houses").innerText)
             let id = document.getElementById("simData").value
+            interval = parseFloat(document.getElementById("seconds").innerText)
 
-            $.getJSON("https://localhost:44314/api/GetSimData/GetData/" + id, function () {
+            if(turbineCount != null && panelCount != null && houseCount > 0 && interval > 0) {
+                $.getJSON("https://localhost:44314/api/GetSimData/GetData/" + id, function () {
 
-            })
-                .done(function (data) {
-                    alert("Data received starting simulation")
-                    runSim(data, turbineCount, panelCount, houseCount, true)
                 })
-                .fail(function () {
-                    alert("Web api not active please try again later")
-                });
+                    .done(function (data) {
+                        alert("Data received starting simulation")
+                        runSim(data, turbineCount, panelCount, houseCount, true)
+                    })
+                    .fail(function () {
+                        alert("Web api not active please try again later")
+                    });
+            }
+            else {
+                alert("Interval must exceed 0")
+                document.getElementById("toggle-btn").disabled = false;
+            }
 
         }
 
