@@ -11,8 +11,8 @@ export function Simulate() {
         interval = document.getElementById("slider").value / 10
         document.getElementById("seconds").innerText = interval
     }
-    
-    function get(){
+
+    function get() {
 
         let selectElement = document.getElementById("month");
         let selectedOption = selectElement.selectedIndex
@@ -20,12 +20,10 @@ export function Simulate() {
         let days = daysInMonth(selectedOptionText)
         let url = ""
 
-        if (selectedOption+1 < 10){
-             url = "https://meteostat.p.rapidapi.com/stations/hourly?station=03091&start=2022-0"+(selectedOption+1)+"-01&end=2022-0"+(selectedOption+1)+"-"+days
-        }
-        
-        else {
-             url = "https://meteostat.p.rapidapi.com/stations/hourly?station=03091&start=2022-"+(selectedOption+1)+"-01&end=2022-"+(selectedOption+1)+"-"+days
+        if (selectedOption + 1 < 10) {
+            url = "https://meteostat.p.rapidapi.com/stations/hourly?station=03091&start=2022-0" + (selectedOption + 1) + "-01&end=2022-0" + (selectedOption + 1) + "-" + days
+        } else {
+            url = "https://meteostat.p.rapidapi.com/stations/hourly?station=03091&start=2022-" + (selectedOption + 1) + "-01&end=2022-" + (selectedOption + 1) + "-" + days
         }
 
         const settings = {
@@ -44,34 +42,34 @@ export function Simulate() {
             createMonthlyAverage(response)
         });
     }
-    
-    function createMonthlyAverage (json){
+
+    function createMonthlyAverage(json) {
         let array = [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
         let hour = 0;
         let response = eval(json.data)
         let selectElement = document.getElementById("month");
         let selectedOptionText = selectElement.options[selectElement.selectedIndex].text;
         let days = daysInMonth(selectedOptionText)
-        
-        for (let i = 0; i < response.length; i++){
-            
-            array[hour] = parseFloat( array[hour]) + parseFloat(response[i].wspd)
+
+        for (let i = 0; i < response.length; i++) {
+
+            array[hour] = parseFloat(array[hour]) + parseFloat(response[i].wspd)
             hour++
-            
-            if(hour > 23){
-                hour = 0 
+
+            if (hour > 23) {
+                hour = 0
             }
         }
-        
-        for (let j = 0; j < array.length; j++){
+
+        for (let j = 0; j < array.length; j++) {
             array[j] = (array[j] / days) / 3.6
         }
-        
+
         console.log(array)
 
         // Export to CSV
         const csv = array.join("\n");
-        const csvFile = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+        const csvFile = new Blob([csv], {type: "text/csv;charset=utf-8;"});
         const downloadLink = document.createElement("a");
         downloadLink.download = "monthly_average.csv";
         downloadLink.href = URL.createObjectURL(csvFile);
@@ -91,13 +89,11 @@ export function Simulate() {
         } else if (monthsWith30Days.includes(month)) {
             return 30;
         } else if (month === february) {
-                return 28;
+            return 28;
         } else {
             throw new Error('Invalid month');
         }
     }
-
-    
 
 
     return (

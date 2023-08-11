@@ -12,6 +12,7 @@ import {
 } from "./wind-turbine";
 import {Clock, updateClock} from "./Clock";
 import $ from "jquery";
+import Plot from "react-plotly.js";
 
 export function Visualiser() {
 
