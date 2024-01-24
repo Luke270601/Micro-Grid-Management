@@ -37,27 +37,6 @@ export function Visualiser() {
         }
     }
 
-    const handleIncreaseCharge = (power) => {
-        if (((power / 1000) / 2000) * 100 < 100) {
-            setCharge((charge + (power / 1000)) / 2000 * 100);
-            document.getElementById("capacity").innerText = "Energy Stored: " + power / 1000 + "/2000 MW/h"
-        }
-    };
-
-    const handleDecreaseCharge = (power) => {
-        if (((power / 1000) / 2000) * 100 > 0) {
-            setCharge(charge - (power / 1000) / 2000 * 100);
-            document.getElementById("capacity").innerText = "Energy Stored: " + power / 1000 + "/2000 MW/h"
-        }
-    };
-
-    const handleEmpty = () => {
-        setCharge(0)
-        charge = 0
-        let power = 0;
-        document.getElementById("capacity").innerText = "Energy Stored: 0/2000 MW/h"
-    };
-
     function getSimData() {
         try {
             document.getElementById("toggle-btn").disabled = true;
@@ -66,7 +45,6 @@ export function Visualiser() {
             document.getElementById("panels").disabled = true;
             document.getElementById("houses").disabled = true;
             document.getElementById("month").disabled = true;
-            handleEmpty()
             let duration = document.getElementById("duration").value
             let turbineCount = document.getElementById("turbines").value
             let panelCount = document.getElementById("panels").value
@@ -91,7 +69,9 @@ export function Visualiser() {
                         document.getElementById("houses").disabled = false;
                         document.getElementById("month").disabled = false;
                     });
-            } else {
+            } 
+            
+            else {
                 alert("All fields must be filled (house count exceed 0)")
                 document.getElementById("toggle-btn").disabled = false;
                 document.getElementById("turbines").disabled = false;
@@ -100,8 +80,8 @@ export function Visualiser() {
                 document.getElementById("houses").disabled = false;
                 document.getElementById("month").disabled = false;
             }
+            
         } catch (error) {
-            handleEmpty()
             let turbineCount = parseInt(document.getElementById("turbines").innerText)
             let panelCount = parseInt(document.getElementById("panels").innerText)
             let houseCount = parseInt(document.getElementById("houses").innerText)
@@ -180,7 +160,8 @@ export function Visualiser() {
                     let houseDemand = 0;
                     let turbineSupply = 0;
                     let solarSupply = 0;
-
+                    await sleep(interval * 1000);
+                    
                     clearList("house-list")
                     for (let h = 0; h < houseList.length; h++) {
                         houseDemand += parseFloat(houseList[h].Message)
@@ -188,7 +169,6 @@ export function Visualiser() {
                         if (h === houseList.length - 1) {
                             interval = parseFloat(document.getElementById("seconds").innerText)
                             document.getElementById("line5").style.animation = "houseLine " + interval + "s linear"
-                            await sleep(interval * 1000);
                             document.getElementById("line5").style.animation = ""
                             document.getElementById('house-message').innerText = ("Total House Demand: " + Math.round(houseDemand) + " KW/h\n");
                         }
@@ -201,7 +181,6 @@ export function Visualiser() {
                         if (t === turbineList.length - 1) {
                             interval = parseFloat(document.getElementById("seconds").innerText)
                             document.getElementById("line2").style.animation = "turbineLine  " + interval + "s linear"
-                            await sleep(interval * 1000);
                             document.getElementById("line2").style.animation = ""
                             document.getElementById('turbine-message').innerText = ("Total Turbine Supply: " + Math.round(turbineSupply) + " KW/h\n");
                         }
@@ -214,7 +193,6 @@ export function Visualiser() {
                         if (p === panelList.length - 1) {
                             interval = parseFloat(document.getElementById("seconds").innerText)
                             document.getElementById("line3").style.animation = "solarLine  " + interval + "s linear"
-                            await sleep(interval * 1000);
                             document.getElementById("line3").style.animation = ""
                             document.getElementById('panel-message').innerText = ("Total Solar Supply: " + Math.round(solarSupply) + " KW/h\n");
                         }
@@ -224,29 +202,21 @@ export function Visualiser() {
                     if (data[i + 1].Message.split(" ")[0] === "Removed:") {
                         document.getElementById("grid-manager-message").innerText = "Gird Status: Requesting supply from battery"
                         document.getElementById("line1").style.animation = "batteryOutLine  " + interval + "s linear"
-                        await sleep(interval * 1000);
                         document.getElementById("line1").style.animation = ""
                         stored -= Math.round((parseFloat((data[i + 1].Message.split(" ")[1])) + Number.EPSILON) * 100) / 100
-                        handleDecreaseCharge(stored)
                     }
 
                     if (data[i + 1].Message.split(" ")[0] === "Stored:") {
                         document.getElementById("grid-manager-message").innerText = "Gird Status: Storing excess energy"
                         document.getElementById("line1").style.animation = "batteryInLine  " + interval + "s linear"
                         stored = Math.round((parseFloat((data[i + 1].Message.split(" ")[1])) + Number.EPSILON) * 100) / 100
-                        await sleep(interval * 1000);
                         document.getElementById("line1").style.animation = ""
-                        handleIncreaseCharge(stored)
                     }
 
                     if (data[i + 1].Message.split(" ")[0] === "Remaining:") {
-                        document.getElementById("grid-manager-message").innerText = "Gird Status: Requesting supply from grid"
-                        document.getElementById("line4").style.animation = "gridLine  " + interval + "s linear"
-                        await sleep(interval * 1000);
-                        document.getElementById("line4").style.animation = "0"
                         fromGrid += (Math.round((parseFloat((data[i + 1].Message.split(" ")[1])) + Number.EPSILON) * 100) / 100)
                         document.getElementById("grid-message").innerText = "Total From Grid: " + fromGrid + " KW/h";
-                        handleEmpty()
+                        stored = 0;
                     }
 
                     houseList = [];
@@ -273,7 +243,6 @@ export function Visualiser() {
                 document.getElementById('turbine-message').innerText = ("Total Turbine Supply: 0KW/h\n");
                 document.getElementById('house-message').innerText = ("Total Demand: 0KW/h\n");
                 document.getElementById("grid-manager-message").innerText = "Gird Status: ";
-                handleEmpty()
                 break;
             }
         }
