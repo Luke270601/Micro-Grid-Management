@@ -1,18 +1,15 @@
 ﻿import React, {useState} from "react";
 import Battery from "./Battery";
 import {
-    House,
-    Panel,
-    WindTurbine,
     Grid,
-    GridManager,
     stopAnimation,
-    startAnimation,
-    EnergyMarker
+    startAnimation
 } from "./wind-turbine";
 import {Clock, updateClock} from "./Clock";
 import $ from "jquery";
-import Plot from "react-plotly.js";
+import LineGraph from "./Graph";
+
+
 
 export function Visualiser() {
 
@@ -21,6 +18,64 @@ export function Visualiser() {
     let stored = 0;
     let interval = 0;
     let days = 0;
+
+    const [windData, setWindData] = useState([
+        { label: 'A', value: 10 },
+        { label: 'B', value: 20 },
+        { label: 'C', value: 15 },
+    ]);
+
+    const [solarData, setSolarData] = useState([
+        { label: 'A', value: 10 },
+        { label: 'B', value: 20 },
+        { label: 'C', value: 15 },
+    ]);
+
+    const [homeData, setHomeData] = useState([
+        { label: 'A', value: 10 },
+        { label: 'B', value: 20 },
+        { label: 'C', value: 15 },
+    ]);
+
+    const [batteryData, setBatteryData] = useState([
+        { label: 'A', value: 10 },
+        { label: 'B', value: 20 },
+        { label: 'C', value: 15 },
+    ]);
+
+    const [gridData, setGridData] = useState([
+        { label: 'A', value: 10 },
+        { label: 'B', value: 20 },
+        { label: 'C', value: 15 },
+    ]);
+
+
+    const updateData = (newData, type) => {
+
+        switch (type){
+            case "Battery":
+                setBatteryData(newData);
+                break;
+
+            case "Solar":
+                setSolarData(newData);
+                break;
+
+            case "Wind":
+                setWindData(newData);
+                break;
+
+            case "Home":
+                setHomeData(newData);
+                break;
+
+            case "Grid":
+                setGridData(newData);
+                break;
+
+            default:
+        }
+    };
 
     function addItemToList(itemText, listName) {
         const list = document.getElementById(listName);
@@ -222,11 +277,6 @@ export function Visualiser() {
                 clearList("house-list")
                 clearList("turbine-list")
                 clearList("panel-list")
-                document.getElementById("grid-message").innerText = "Total From Grid: 0KW/h";
-                document.getElementById('panel-message').innerText = ("Total Solar Supply: 0KW/h\n");
-                document.getElementById('turbine-message').innerText = ("Total Turbine Supply: 0KW/h\n");
-                document.getElementById('house-message').innerText = ("Total Demand: 0KW/h\n");
-                document.getElementById("grid-manager-message").innerText = "Gird Status: ";
                 break;
             }
         }
@@ -250,6 +300,8 @@ export function Visualiser() {
         }
     }
 
+
+
     return (
         <>
             <div className={"simulation-panel"}>
@@ -263,6 +315,7 @@ export function Visualiser() {
                     <div className={"visualiser-container"}>
                         <div className="card-body-visualiser battery-icon">
                             <div id={"capacity"} className={"message"}>Energy Stored: 0/2000 MW/h</div>
+                            <LineGraph data={windData} width={800} height={400} />
                         </div>
                         <div className="wind-turbine-animated turbine-icon">
                             <div className="dropdown">

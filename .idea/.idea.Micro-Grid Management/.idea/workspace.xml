@@ -8,8 +8,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Began modifying visualiser for graph integration, removed pauses between actions">
+    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Removed unnecessary visual elements">
+      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Graph.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Visualiser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Visualiser.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -260,7 +263,8 @@
       <workItem from="1691703680027" duration="1839000" />
       <workItem from="1691709572236" duration="443000" />
       <workItem from="1706120631351" duration="4766000" />
-      <workItem from="1706135638817" duration="2376000" />
+      <workItem from="1706135638817" duration="3683000" />
+      <workItem from="1706199460329" duration="3241000" />
     </task>
     <task id="LOCAL-00002" summary="Removed necessary class files">
       <created>1675216378406</created>
@@ -522,7 +526,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706137169655</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Removed unnecessary visual elements">
+      <option name="closed" value="true" />
+      <created>1706138545838</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1706138545838</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,7 +566,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added transitions to settings and visualiser" />
     <MESSAGE value="Setup minor formatting for settings and visualiser position" />
     <MESSAGE value="Added svgs to represent each element of the grid" />
     <MESSAGE value="Added clock timer" />
@@ -579,7 +590,8 @@
     <MESSAGE value="Fixed history tab to include duration and day counter" />
     <MESSAGE value="Fixed history starting without a set interval" />
     <MESSAGE value="Began modifying visualiser for graph integration, removed pauses between actions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Began modifying visualiser for graph integration, removed pauses between actions" />
+    <MESSAGE value="Removed unnecessary visual elements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed unnecessary visual elements" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
