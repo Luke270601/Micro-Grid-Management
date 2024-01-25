@@ -125,6 +125,7 @@ export function Visualiser() {
 
 
     async function runSim(json, turbineCount, panelCount, houseCount, previousSim) {
+        setWindData([{ time: '00:00', value: 0 }]);
         let hours = 0;
         let duration = 0;
         if (previousSim) {
