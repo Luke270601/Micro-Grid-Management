@@ -1,10 +1,4 @@
 ﻿import React, {useState} from "react";
-import Battery from "./Battery";
-import {
-    Grid,
-    stopAnimation,
-    startAnimation
-} from "./wind-turbine";
 import {Clock, updateClock} from "./Clock";
 import $ from "jquery";
 import LineGraph from "./Graph";
@@ -13,70 +7,31 @@ import LineGraph from "./Graph";
 
 export function Visualiser() {
 
-    let [charge, setCharge] = useState(0);
     let fromGrid = 0;
     let stored = 0;
     let interval = 0;
     let days = 0;
 
     const [windData, setWindData] = useState([
-        { label: 'A', value: 10 },
-        { label: 'B', value: 20 },
-        { label: 'C', value: 15 },
+        { time: '00:00', value: 0 }
     ]);
 
     const [solarData, setSolarData] = useState([
-        { label: 'A', value: 10 },
-        { label: 'B', value: 20 },
-        { label: 'C', value: 15 },
+        { time: '00:00', value: 0 }
     ]);
 
     const [homeData, setHomeData] = useState([
-        { label: 'A', value: 10 },
-        { label: 'B', value: 20 },
-        { label: 'C', value: 15 },
+        { time: '00:00', value: 0 }
     ]);
 
     const [batteryData, setBatteryData] = useState([
-        { label: 'A', value: 10 },
-        { label: 'B', value: 20 },
-        { label: 'C', value: 15 },
+        { time: '00:00', value: 0 }
     ]);
 
     const [gridData, setGridData] = useState([
-        { label: 'A', value: 10 },
-        { label: 'B', value: 20 },
-        { label: 'C', value: 15 },
+        { time: '00:00', value: 0 }
     ]);
-
-
-    const updateData = (newData, type) => {
-
-        switch (type){
-            case "Battery":
-                setBatteryData(newData);
-                break;
-
-            case "Solar":
-                setSolarData(newData);
-                break;
-
-            case "Wind":
-                setWindData(newData);
-                break;
-
-            case "Home":
-                setHomeData(newData);
-                break;
-
-            case "Grid":
-                setGridData(newData);
-                break;
-
-            default:
-        }
-    };
-
+    
     function addItemToList(itemText, listName) {
         const list = document.getElementById(listName);
         const newItem = document.createElement("li");
@@ -181,12 +136,12 @@ export function Visualiser() {
         days = duration
         document.getElementById("days-remaining").innerText = "Days Remaining: " + duration
 
-        startAnimation()
 
         let count = 0
         let totalAgents = parseInt(turbineCount) + parseInt(panelCount) + parseInt(houseCount)
         let houseList = [];
         let turbineList = [];
+        let turbinePowerList =[ ];
         let panelList = [];
         let data = eval(json)
 
@@ -216,6 +171,7 @@ export function Visualiser() {
                     let turbineSupply = 0;
                     let solarSupply = 0;
                     interval = parseFloat(document.getElementById("seconds").innerText)
+                    let currentTime = document.getElementById('clock').innerText;
                     await sleep(interval * 1000);
                     
                     clearList("house-list")
@@ -223,7 +179,6 @@ export function Visualiser() {
                         houseDemand += parseFloat(houseList[h].Message)
                         addItemToList((houseList[h].Sender + " : " + houseList[h].Message + " KW/h\n"), "house-list")
                         if (h === houseList.length - 1) {
-
                         }
                     }
 
@@ -232,7 +187,9 @@ export function Visualiser() {
                         turbineSupply += parseFloat(turbineList[t].Message)
                         addItemToList((turbineList[t].Sender + " : " + turbineList[t].Message + " KW/h\n"), "turbine-list")
                         if (t === turbineList.length - 1) {
-
+                            turbinePowerList.push({ time: currentTime, value: turbineSupply })
+                            // Correct way to update state immutably
+                            setWindData(prevData => [...prevData, { time: currentTime, value: turbineSupply }]);
                         }
                     }
 
@@ -282,7 +239,6 @@ export function Visualiser() {
         }
 
         if (document.getElementById("houses").disabled) {
-            stopAnimation()
             document.getElementById("toggle-btn").disabled = false;
             document.getElementById("turbines").disabled = false;
             document.getElementById("duration").disabled = false;
@@ -296,7 +252,6 @@ export function Visualiser() {
             document.getElementById("turbines").disabled = false;
             document.getElementById("panels").disabled = false;
             document.getElementById("houses").disabled = false;
-            stopAnimation()
         }
     }
 
@@ -315,7 +270,6 @@ export function Visualiser() {
                     <div className={"visualiser-container"}>
                         <div className="card-body-visualiser battery-icon">
                             <div id={"capacity"} className={"message"}>Energy Stored: 0/2000 MW/h</div>
-                            <LineGraph data={windData} width={800} height={400} />
                         </div>
                         <div className="wind-turbine-animated turbine-icon">
                             <div className="dropdown">
@@ -326,6 +280,7 @@ export function Visualiser() {
                                     </div>
                                 </div>
                                 <div id={"turbine-message"} className={"message"}>Total Turbine Supply: 0 KW/h</div>
+                                <LineGraph data={windData} width={400} height={400} />
                             </div>
                         </div>
                         <div className="card-body-visualiser solar-icon">

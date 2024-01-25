@@ -8,12 +8,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Removed unnecessary visual elements">
-      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Graph.jsx" afterDir="false" />
+    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Setting up graph element integration using D3">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Graph.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Graph.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Visualiser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Visualiser.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/wind-turbine.jsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +263,7 @@
       <workItem from="1691709572236" duration="443000" />
       <workItem from="1706120631351" duration="4766000" />
       <workItem from="1706135638817" duration="3683000" />
-      <workItem from="1706199460329" duration="3241000" />
+      <workItem from="1706199460329" duration="9173000" />
     </task>
     <task id="LOCAL-00002" summary="Removed necessary class files">
       <created>1675216378406</created>
@@ -534,7 +533,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706138545838</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Setting up graph element integration using D3">
+      <option name="closed" value="true" />
+      <created>1706213445016</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1706213445016</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,7 +573,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Setup minor formatting for settings and visualiser position" />
     <MESSAGE value="Added svgs to represent each element of the grid" />
     <MESSAGE value="Added clock timer" />
     <MESSAGE value="Modified clock timer, and began constructing a formatting function for ui elements of the visualiser" />
@@ -591,7 +597,8 @@
     <MESSAGE value="Fixed history starting without a set interval" />
     <MESSAGE value="Began modifying visualiser for graph integration, removed pauses between actions" />
     <MESSAGE value="Removed unnecessary visual elements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed unnecessary visual elements" />
+    <MESSAGE value="Setting up graph element integration using D3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Setting up graph element integration using D3" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

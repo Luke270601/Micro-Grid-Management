@@ -12,7 +12,7 @@ const LineGraph = ({ data, width, height }) => {
 
         const xScale = d3
             .scaleBand()
-            .domain(data.map(d => d.label))
+            .domain(data.map(d => d.time))
             .range([0, innerWidth])
             .padding(0.1);
 
@@ -24,29 +24,44 @@ const LineGraph = ({ data, width, height }) => {
 
         const line = d3
             .line()
-            .x(d => xScale(d.label) + xScale.bandwidth() / 2 + margin.left)
+            .x(d => xScale(d.time) + xScale.bandwidth() / 2 + margin.left)
             .y(d => yScale(d.value) + margin.top);
 
-        svg.selectAll('*').remove();
+        // Select the existing line path
+        const linePath = svg.select('.line-path');
 
-        svg
-            .append('path')
-            .datum(data)
-            .attr('fill', 'none')
-            .attr('stroke', 'steelblue')
-            .attr('stroke-width', 1.5)
-            .attr('d', line);
+        // If the line path doesn't exist, create it
+        if (linePath.empty()) {
+            svg.append('path')
+                .attr('class', 'line-path')
+                .attr('fill', 'none')
+                .attr('stroke', 'steelblue')
+                .attr('stroke-width', 1.5);
+        }
+
+        // Transition the line path
+        linePath.transition()
+            .duration(1000)
+            .attr('d', line(data));
 
         const xAxis = d3.axisBottom(xScale);
         const yAxis = d3.axisLeft(yScale);
 
+        // Clear existing axes
+        svg.selectAll('.x-axis').remove();
+        svg.selectAll('.y-axis').remove();
+
+        // Append X axis
         svg
             .append('g')
+            .attr('class', 'x-axis')
             .attr('transform', `translate(${margin.left},${innerHeight + margin.top})`)
             .call(xAxis);
 
+        // Append Y axis
         svg
             .append('g')
+            .attr('class', 'y-axis')
             .attr('transform', `translate(${margin.left},${margin.top})`)
             .call(yAxis);
 
