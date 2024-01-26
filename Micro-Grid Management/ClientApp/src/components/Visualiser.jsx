@@ -126,6 +126,10 @@ export function Visualiser() {
 
     async function runSim(json, turbineCount, panelCount, houseCount, previousSim) {
         setWindData([{ time: '00:00', value: 0 }]);
+        setSolarData([{ time: '00:00', value: 0 }]);
+        setBatteryData([{ time: '00:00', value: 0 }]);
+        setHomeData([{ time: '00:00', value: 0 }]);
+        setGridData([{ time: '00:00', value: 0 }]);
         let hours = 0;
         let duration = 0;
         if (previousSim) {
@@ -142,7 +146,6 @@ export function Visualiser() {
         let totalAgents = parseInt(turbineCount) + parseInt(panelCount) + parseInt(houseCount)
         let houseList = [];
         let turbineList = [];
-        let turbinePowerList =[ ];
         let panelList = [];
         let data = eval(json)
 
@@ -180,6 +183,7 @@ export function Visualiser() {
                         houseDemand += parseFloat(houseList[h].Message)
                         addItemToList((houseList[h].Sender + " : " + houseList[h].Message + " KW/h\n"), "house-list")
                         if (h === houseList.length - 1) {
+                            setHomeData(prevData => [...prevData, { time: currentTime, value: houseDemand }]);
                         }
                     }
 
@@ -188,7 +192,6 @@ export function Visualiser() {
                         turbineSupply += parseFloat(turbineList[t].Message)
                         addItemToList((turbineList[t].Sender + " : " + turbineList[t].Message + " KW/h\n"), "turbine-list")
                         if (t === turbineList.length - 1) {
-                            turbinePowerList.push({ time: currentTime, value: turbineSupply })
                             // Correct way to update state immutably
                             setWindData(prevData => [...prevData, { time: currentTime, value: turbineSupply }]);
                         }
@@ -199,21 +202,27 @@ export function Visualiser() {
                         solarSupply += parseFloat(panelList[p].Message)
                         addItemToList((panelList[p].Sender + " : " + panelList[p].Message + " KW/h\n"), "panel-list")
                         if (p === panelList.length - 1) {
+                            setSolarData(prevData => [...prevData, { time: currentTime, value: solarSupply }]);
                         }
                     }
 
                     interval = parseFloat(document.getElementById("seconds").innerText)
                     if (data[i + 1].Message.split(" ")[0] === "Removed:") {
                         stored -= Math.round((parseFloat((data[i + 1].Message.split(" ")[1])) + Number.EPSILON) * 100) / 100
+                        setBatteryData(prevData => [...prevData, { time: currentTime, value: stored }]);
                     }
 
                     if (data[i + 1].Message.split(" ")[0] === "Stored:") {
                         stored = Math.round((parseFloat((data[i + 1].Message.split(" ")[1])) + Number.EPSILON) * 100) / 100
+                        setBatteryData(prevData => [...prevData, { time: currentTime, value: stored }]);
                     }
 
                     if (data[i + 1].Message.split(" ")[0] === "Remaining:") {
                         fromGrid += (Math.round((parseFloat((data[i + 1].Message.split(" ")[1])) + Number.EPSILON) * 100) / 100)
+                        setWindData(prevData => [...prevData, { time: currentTime, value: turbineSupply }]);
                         stored = 0;
+                        setBatteryData(prevData => [...prevData, { time: currentTime, value: stored }]);
+                        setGridData(prevData => [...prevData, { time: currentTime, value: fromGrid }]);
                     }
 
                     houseList = [];
@@ -271,6 +280,7 @@ export function Visualiser() {
                     <div className={"visualiser-container"}>
                         <div className="card-body-visualiser battery-icon">
                             <div id={"capacity"} className={"message"}>Energy Stored: 0/2000 MW/h</div>
+                            <LineGraph data={batteryData} width={400} height={400} />
                         </div>
                         <div className="wind-turbine-animated turbine-icon">
                             <div className="dropdown">
@@ -293,6 +303,7 @@ export function Visualiser() {
                                     </div>
                                 </div>
                                 <div id={"panel-message"} className={"message"}>Total Solar Supply: 0 KW/h</div>
+                                <LineGraph data={solarData} width={400} height={400} />
                             </div>
                         </div>
                         <div className="card-body-visualiser">
@@ -303,6 +314,7 @@ export function Visualiser() {
                         </div>
                         <div className="grid-icon">
                             <div id={"grid-message"} className={"message"}>Total From Grid: 0 KW/h</div>
+                            <LineGraph data={gridData} width={400} height={400} />
                         </div>
                         <div className="house-icon">
                             <div id={"grid-manager-message"} className={"message"}>Grid Status:</div>
@@ -316,6 +328,7 @@ export function Visualiser() {
                                     </div>
                                 </div>
                                 <div id={"house-message"} className={"message"}>Total House Demand: 0 KW/h</div>
+                                <LineGraph data={homeData} width={400} height={400} />
                             </div>
                         </div>
                     </div>

@@ -8,7 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Graph appears correctly and updates as new points are added" />
+    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="reset graph upon starting new sim" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -258,7 +258,7 @@
       <workItem from="1691709572236" duration="443000" />
       <workItem from="1706120631351" duration="4766000" />
       <workItem from="1706135638817" duration="3683000" />
-      <workItem from="1706199460329" duration="9711000" />
+      <workItem from="1706199460329" duration="10051000" />
     </task>
     <task id="LOCAL-00002" summary="Removed necessary class files">
       <created>1675216378406</created>
@@ -544,7 +544,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706220397833</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="reset graph upon starting new sim">
+      <option name="closed" value="true" />
+      <created>1706220951903</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1706220951903</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -576,7 +584,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added clock timer" />
     <MESSAGE value="Modified clock timer, and began constructing a formatting function for ui elements of the visualiser" />
     <MESSAGE value="Supply and demand totals display on visualiser with the animations stopping upon its completion" />
     <MESSAGE value="Battery now responds to changes in charge/discharge and will empty when demand is still remaining" />
@@ -601,7 +608,8 @@
     <MESSAGE value="Removed unnecessary visual elements" />
     <MESSAGE value="Setting up graph element integration using D3" />
     <MESSAGE value="Graph appears correctly and updates as new points are added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Graph appears correctly and updates as new points are added" />
+    <MESSAGE value="reset graph upon starting new sim" />
+    <option name="LAST_COMMIT_MESSAGE" value="reset graph upon starting new sim" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
