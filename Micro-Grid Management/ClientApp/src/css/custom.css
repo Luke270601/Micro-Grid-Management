@@ -1,3 +1,38 @@
+/* Animation for styling for ui cards */
+.settings-card {
+    opacity: 0;
+    border: solid #123367 2px;
+    width: 500px;
+    padding-bottom: 10px;
+    height: min-content;
+    transform: translateY(50px);
+    animation: fade-in-upwards 0.5s ease-out forwards;
+}
+
+
+@keyframes fade-in-upwards {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in-from-right {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
 
 /* Basic styling for card elements */
 .card-header {
@@ -61,6 +96,7 @@ li {
 .card {
     background-color: #585664;
 }
+
 
 
 
