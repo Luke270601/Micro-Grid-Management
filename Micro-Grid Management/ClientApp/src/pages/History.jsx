@@ -9,6 +9,7 @@ export function History() {
             <TabPanel/>
             <div className={"settings-container"}>
             <Visualiser></Visualiser>
+                <HistorySettings></HistorySettings>
             </div>
         </div>
     );

@@ -8,13 +8,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Moved settings for both active simulation and previous simulations to own component">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Battery.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Visualiser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/Visualiser.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/css/custom.css" afterDir="false" />
+    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="Deleting unnecessary styling and components">
       <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/History.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/History.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Simulate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Simulate.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,7 +264,7 @@
       <workItem from="1706280748464" duration="2398000" />
       <workItem from="1706329869176" duration="118000" />
       <workItem from="1706547483115" duration="1540000" />
-      <workItem from="1706630160169" duration="2676000" />
+      <workItem from="1706630160169" duration="3058000" />
     </task>
     <task id="LOCAL-00002" summary="Removed necessary class files">
       <created>1675216378406</created>
@@ -579,7 +574,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706631810484</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Deleting unnecessary styling and components">
+      <option name="closed" value="true" />
+      <created>1706633174477</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1706633174477</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -611,7 +614,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Battery now responds to changes in charge/discharge and will empty when demand is still remaining" />
     <MESSAGE value="Battery capacity tracking added for visualisers as well as a redesigned clock element that ticks over an hour in time with the simulation" />
     <MESSAGE value="Grid usage is tracked in div" />
     <MESSAGE value="Fixed alignment of elements in visualiser" />
@@ -636,7 +638,8 @@
     <MESSAGE value="reset graph upon starting new sim" />
     <MESSAGE value="introduced graphs for each data set i.e. solar, house demand, energy stored" />
     <MESSAGE value="Moved settings for both active simulation and previous simulations to own component" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved settings for both active simulation and previous simulations to own component" />
+    <MESSAGE value="Deleting unnecessary styling and components" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleting unnecessary styling and components" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

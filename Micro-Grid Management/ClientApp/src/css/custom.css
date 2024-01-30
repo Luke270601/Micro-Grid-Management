@@ -1,3 +1,4 @@
+
 /* Basic styling for card elements */
 .card-header {
     color: white;
@@ -56,6 +57,12 @@ li {
     flex-wrap: wrap;
     flex-direction: column;
 }
+
+.card {
+    background-color: #585664;
+}
+
+
 
 
 /* Button CSS by Google From https://getcssscan.com/css-buttons-examples */
