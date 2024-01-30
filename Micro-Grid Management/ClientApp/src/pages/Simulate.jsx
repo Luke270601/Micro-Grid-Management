@@ -9,7 +9,6 @@ export function Simulate() {
         <div id={"simulate"}>
             <TabPanel/>
             <div className={"settings-container"}>
-            <SimulateSettings></SimulateSettings>
                 <Visualiser></Visualiser>
             </div>
         </div>

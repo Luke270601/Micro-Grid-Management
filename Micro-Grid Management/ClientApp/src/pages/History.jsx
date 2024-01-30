@@ -8,7 +8,6 @@ export function History() {
         <div id={"simulate"}>
             <TabPanel/>
             <div className={"settings-container"}>
-            <HistorySettings></HistorySettings>
             <Visualiser></Visualiser>
             </div>
         </div>
