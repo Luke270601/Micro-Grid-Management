@@ -8,7 +8,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="reset graph upon starting new sim" />
+    <list default="true" id="9de58d07-b5e9-4be9-8096-8333a02b0da0" name="Changes" comment="introduced graphs for each data set i.e. solar, house demand, energy stored">
+      <change afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/components/SettingsMenus.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Micro-Grid Management/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/History.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/History.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Simulate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Micro-Grid Management/ClientApp/src/pages/Simulate.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -259,6 +265,10 @@
       <workItem from="1706120631351" duration="4766000" />
       <workItem from="1706135638817" duration="3683000" />
       <workItem from="1706199460329" duration="10051000" />
+      <workItem from="1706280748464" duration="2398000" />
+      <workItem from="1706329869176" duration="118000" />
+      <workItem from="1706547483115" duration="1540000" />
+      <workItem from="1706630160169" duration="1567000" />
     </task>
     <task id="LOCAL-00002" summary="Removed necessary class files">
       <created>1675216378406</created>
@@ -552,7 +562,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706220951903</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="introduced graphs for each data set i.e. solar, house demand, energy stored">
+      <option name="closed" value="true" />
+      <created>1706281902095</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1706281902096</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +602,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Modified clock timer, and began constructing a formatting function for ui elements of the visualiser" />
     <MESSAGE value="Supply and demand totals display on visualiser with the animations stopping upon its completion" />
     <MESSAGE value="Battery now responds to changes in charge/discharge and will empty when demand is still remaining" />
     <MESSAGE value="Battery capacity tracking added for visualisers as well as a redesigned clock element that ticks over an hour in time with the simulation" />
@@ -609,7 +626,8 @@
     <MESSAGE value="Setting up graph element integration using D3" />
     <MESSAGE value="Graph appears correctly and updates as new points are added" />
     <MESSAGE value="reset graph upon starting new sim" />
-    <option name="LAST_COMMIT_MESSAGE" value="reset graph upon starting new sim" />
+    <MESSAGE value="introduced graphs for each data set i.e. solar, house demand, energy stored" />
+    <option name="LAST_COMMIT_MESSAGE" value="introduced graphs for each data set i.e. solar, house demand, energy stored" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

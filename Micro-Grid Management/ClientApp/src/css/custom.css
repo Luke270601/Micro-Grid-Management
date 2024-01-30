@@ -189,6 +189,18 @@ li {
     text-align: center;
 }
 
+.settings-dropdown {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.settings-dropdown.active {
+    max-height: 500px; /* Adjust height as needed */
+}
+
+
 
 /* Button CSS by Google From https://getcssscan.com/css-buttons-examples */
 .sim-start-button {
