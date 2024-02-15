@@ -38,7 +38,6 @@
 .card-header {
     color: white;
     background-color: #3F4856;
-    margin-right: auto;
 }
 
 .settings-card-header {
@@ -61,14 +60,11 @@ label {
 .side-bar {
     align-content: center;
     width: 160px;
-    height: 100vh;
     background: #3F4856;
 }
 
 .settings-container {
-    padding-top: 3%;
     display: flex;
-    gap: 5%;
 }
 
 

@@ -1,7 +1,7 @@
 ﻿import React from "react";
 import {Link} from "react-router-dom";
 
-export function TabPanel() {
+export function Sidebar() {
 
     return (
         <div className="side-bar">

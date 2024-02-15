@@ -241,17 +241,15 @@ export function Visualiser() {
     return (
         <>
             <div className={"simulation-panel"}>
-                <h3 className="card-header ">Visualiser
-                </h3>
-                <h4 className="card-header " id={"days-remaining"}>Days Remaining:</h4>
                 <LineGraph data={batteryData} width={400} height={400}/>
+                <br/>
                 <LineGraph data={windData} width={400} height={400}/>
+                <br/>
                 <LineGraph data={solarData} width={400} height={400}/>
+                <br/>
                 <LineGraph data={gridData} width={400} height={400}/>
+                <br/>
                 <LineGraph data={homeData} width={400} height={400}/>
-                <button id={"toggle-btn"} type={"button"} className={"sim-start-button"} onClick={getSimData}>Start
-                    Sim
-                </button>
             </div>
         </>
     );

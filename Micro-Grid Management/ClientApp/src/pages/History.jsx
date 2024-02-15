@@ -1,4 +1,4 @@
-import {TabPanel} from "../components/SideBar";
+import {Sidebar} from "../components/SideBar";
 import {Visualiser} from "../components/Visualiser";
 import React from "react";
 import {HistorySettings} from "../components/SettingsMenus";
@@ -6,7 +6,7 @@ import {HistorySettings} from "../components/SettingsMenus";
 export function History() {
     return (
         <div id={"simulate"}>
-            <TabPanel/>
+            <Sidebar/>
             <div className={"settings-container"}>
             <Visualiser></Visualiser>
                 <HistorySettings></HistorySettings>
